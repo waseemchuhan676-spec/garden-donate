@@ -1,142 +1,225 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Where to Donate Garden Tools Near You | Donation Finder</title>
+<meta name="description" content="Find ways to donate garden tools, lawn equipment and gardening supplies. Search by ZIP code, check item condition, estimate value and prepare your donation.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://garden-donate.vercel.app/">
-<title>Where to Donate Garden Tools? | Garden Tool Donation Finder</title>
-<meta name="description" content="Find places to donate garden tools, lawn equipment and gardening supplies. Check item condition, estimate value and prepare tools for donation.">
-<meta property="og:title" content="Where to Donate Garden Tools? | Garden Tool Donation Finder">
-<meta property="og:description" content="Find donation options for garden tools, lawn equipment and gardening supplies, plus condition and value tools.">
 <meta property="og:type" content="website">
+<meta property="og:title" content="Where to Donate Garden Tools Near You | Donation Finder">
+<meta property="og:description" content="Find donation centers, reuse programs, community gardens and other options for donating garden tools and lawn equipment.">
 <meta property="og:url" content="https://garden-donate.vercel.app/">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Where to Donate Garden Tools? | Garden Tool Donation Finder">
-<meta name="twitter:description" content="Find donation options for garden tools, lawn equipment and gardening supplies.">
+<meta name="twitter:title" content="Where to Donate Garden Tools Near You | Donation Finder">
+<meta name="twitter:description" content="Find ways to donate garden tools, lawn equipment and gardening supplies.">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3V9ND28MWL"></script>
 <script>
 window.dataLayer=window.dataLayer||[];
-function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());
-gtag('config','G-3V9ND28MWL');
+function gtag(){dataLayer.push(arguments)}
+gtag('js',new Date()); gtag('config','G-3V9ND28MWL');
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[
-{"@type":"WebSite","name":"Garden Tool Donation Finder","url":"https://garden-donate.vercel.app/","description":"A free guide and tool set for finding options to donate usable garden tools, lawn equipment and gardening supplies."},
-{"@type":"WebApplication","name":"Garden Tool Donation Finder","url":"https://garden-donate.vercel.app/","applicationCategory":"UtilityApplication","operatingSystem":"Web","description":"A free web application with a garden tool donation finder, condition checker and educational value estimator."}
-]}
+{
+ "@context":"https://schema.org",
+ "@graph":[
+  {"@type":"WebSite","name":"Garden Tool Donation Finder","url":"https://garden-donate.vercel.app/","description":"A free garden tool donation discovery and preparation website."},
+  {"@type":"WebApplication","name":"Garden Tool Donation Finder","url":"https://garden-donate.vercel.app/","applicationCategory":"UtilityApplication","operatingSystem":"Web"},
+  {"@type":"FAQPage","mainEntity":[
+   {"@type":"Question","name":"Where can I donate garden tools?","acceptedAnswer":{"@type":"Answer","text":"Possible options include local reuse centers, Habitat ReStores, Goodwill organizations, community gardens, schools, tool libraries and other nonprofits. Acceptance varies by location, so verify before traveling."}},
+   {"@type":"Question","name":"Can I donate a lawn mower?","acceptedAnswer":{"@type":"Answer","text":"Some organizations accept lawn mowers, but requirements vary. Confirm that the specific location accepts your mower and whether it must be working or whether pickup is available."}},
+   {"@type":"Question","name":"Can I donate broken garden tools?","acceptedAnswer":{"@type":"Answer","text":"Severely broken or unsafe tools may be better suited to repair, reuse or recycling rather than charity donation. Local acceptance rules apply."}},
+   {"@type":"Question","name":"Can I get a tax deduction for donated tools?","acceptedAnswer":{"@type":"Answer","text":"A donation may qualify under applicable rules when requirements are met, but this site does not determine tax deductibility. Keep appropriate documentation and consult current official guidance or a qualified tax professional."}}
+  ]}
+ ]
+}
 </script>
 <style>
-:root{--green:#2f6f3e;--green2:#4d8b52;--light:#f3f8f1;--dark:#183321;--muted:#66756b;--border:#dce7dd;--white:#fff;--orange:#c97826}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--dark);background:#f7faf7;line-height:1.55}
-.container{max-width:1100px;margin:auto;padding:0 20px}header{background:linear-gradient(135deg,#214e2c,#4f8c4e);color:#fff;padding:55px 0 70px}
-.badge{display:inline-block;background:#ffffff1c;border:1px solid #ffffff45;padding:7px 13px;border-radius:30px;font-size:13px;margin-bottom:16px}
-h1{font-size:clamp(34px,5vw,58px);line-height:1.05;margin:0 0 16px}.hero p{max-width:760px;font-size:18px;color:#e9f4e9}
-.finder{background:#fff;color:var(--dark);padding:24px;border-radius:16px;box-shadow:0 15px 35px #18332125;margin-top:28px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.field label{display:block;font-weight:700;font-size:13px;margin-bottom:6px}
-.field input,.field select{width:100%;padding:13px;border:1px solid #ccd8cd;border-radius:9px;font-size:15px;background:#fff}
-button{border:0;border-radius:9px;padding:13px 18px;font-weight:700;cursor:pointer}.primary{background:var(--green);color:#fff}.secondary{background:#e9f2ea;color:var(--green)}
-button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #f0b35f;outline-offset:3px}
-.results{display:none;margin-top:20px;border-top:1px solid var(--border);padding-top:20px}.result-card{border:1px solid var(--border);padding:17px;border-radius:12px;margin:10px 0;background:#fbfdfb}.result-card h3{margin:0 0 5px}
-.tag{display:inline-block;background:#e8f3e8;color:var(--green);font-size:12px;padding:4px 8px;border-radius:20px;margin:3px 3px 3px 0}
-section{padding:52px 0}.section-title{text-align:center;max-width:750px;margin:0 auto 30px}.section-title h2{font-size:32px;margin:0 0 8px}.section-title p{color:var(--muted)}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:22px;box-shadow:0 5px 18px #1833210b}.card h3{margin-top:8px}.icon{font-size:28px}
-.tool{background:#fff;border:1px solid var(--border);border-radius:16px;padding:25px}.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}.checklist label{display:block;padding:9px 0}
-.notice{background:#fff7ea;border-left:4px solid var(--orange);padding:14px;border-radius:8px;color:#634019}.answer{margin-top:15px;padding:17px;background:#eef7ef;border-radius:10px;display:none}.score{font-size:30px;font-weight:800;color:var(--green)}
-.faq details{background:#fff;border:1px solid var(--border);border-radius:10px;padding:15px 18px;margin:10px 0}.faq summary{font-weight:700;cursor:pointer}
-.content{max-width:900px;margin:auto}.content h3{margin-top:26px}.content ul{padding-left:22px}.internal-links a{display:inline-block;margin:6px 10px 6px 0;color:var(--green);font-weight:700}
-footer{background:#173321;color:#dcebdc;padding:35px 0;margin-top:20px}footer a{color:#cfe7cf}
-@media(max-width:800px){.grid,.cards,.two{grid-template-columns:1fr}.finder{padding:18px}section{padding:40px 0}.section-title h2{font-size:28px}}
+:root{--g:#236b3a;--g2:#32804a;--dark:#163022;--ink:#24332a;--muted:#617067;--bg:#f5f8f5;--card:#fff;--line:#dbe6dd;--soft:#eaf4ec;--warn:#9a5b14;--warnbg:#fff5e7;--red:#a33b32;--redbg:#fff0ef;--shadow:0 12px 32px rgba(22,48,34,.09)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+a{color:var(--g);font-weight:700}button,input,select{font:inherit}button{cursor:pointer}.wrap{max-width:1180px;margin:auto;padding:0 20px}
+header{background:linear-gradient(135deg,#143d25,#2f7b45);color:#fff}.top{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 0}.brand{font-weight:900;font-size:19px;color:#fff;text-decoration:none}.nav{display:flex;gap:18px;flex-wrap:wrap}.nav a{color:#e9f7ec;text-decoration:none;font-size:14px}
+.hero{padding:52px 0 68px}.eyebrow{display:inline-block;padding:6px 11px;border:1px solid #ffffff44;background:#ffffff14;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em}.hero h1{font-size:clamp(38px,6vw,66px);line-height:1.02;max-width:850px;margin:16px 0}.hero p{font-size:19px;max-width:780px;color:#e8f5ea}.finder{background:#fff;color:var(--dark);padding:24px;border-radius:18px;box-shadow:0 22px 50px rgba(0,0,0,.16);margin-top:30px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.field label{display:block;font-weight:800;font-size:13px;margin-bottom:6px}.field input,.field select{width:100%;padding:13px;border:1px solid #cbd8ce;border-radius:10px;background:#fff}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.btn{border:0;border-radius:10px;padding:13px 18px;font-weight:800}.primary{background:var(--g);color:#fff}.secondary{background:var(--soft);color:var(--g)}.outline{background:#fff;color:var(--g);border:1px solid var(--line)}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #f0b34f;outline-offset:3px}
+.status{margin-top:15px;padding:13px;border-radius:10px;background:#f0f7f1}.notice{background:var(--warnbg);border-left:4px solid #d18a2c;padding:14px;border-radius:8px}.results{display:none;margin-top:18px}.result{border:1px solid var(--line);border-radius:13px;padding:16px;background:#fbfdfb;margin-top:10px}.result h3{margin:0 0 4px}.tag{display:inline-block;background:#e7f3e9;color:var(--g);border-radius:999px;padding:3px 8px;font-size:12px;font-weight:800;margin:3px 3px 3px 0}
+section{padding:58px 0}.alt{background:#edf5ee}.section-head{text-align:center;max-width:800px;margin:0 auto 30px}.section-head h2{font-size:34px;line-height:1.15;margin:0 0 8px}.section-head p{color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card,.tool{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow)}.card h3,.tool h3{margin:6px 0 8px}.icon{font-size:28px}.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}.check label{display:block;padding:9px 0;border-bottom:1px solid #edf1ed}.answer{display:none;margin-top:15px;padding:17px;border-radius:11px;background:var(--soft)}.answer.yellow{background:var(--warnbg);color:#6d461c}.answer.red{background:var(--redbg);color:#712d28}.score{font-size:25px;font-weight:900}.progress{height:9px;background:#e1e9e2;border-radius:999px;overflow:hidden}.progress i{display:block;height:100%;width:0;background:var(--g);transition:width .2s}.prep-row{display:flex;gap:10px;align-items:flex-start;padding:10px 0}.content{max-width:920px;margin:auto}.content h3{margin-top:28px}.links{display:flex;flex-wrap:wrap;gap:9px}.links a{padding:8px 11px;border:1px solid var(--line);border-radius:999px;text-decoration:none;background:#fff}.faq details{background:#fff;border:1px solid var(--line);border-radius:11px;padding:15px 18px;margin:10px 0}.faq summary{font-weight:800;cursor:pointer}.legal{font-size:14px;color:#d7e7da}footer{background:#142d1f;color:#dcebdc;padding:38px 0}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:25px}.footer-grid a{color:#d9efdd;display:block;margin:7px 0;text-decoration:none}.small{font-size:13px;color:var(--muted)}
+@media(max-width:850px){.grid,.cards,.two,.footer-grid{grid-template-columns:1fr}.nav{display:none}.hero{padding-top:35px}section{padding:45px 0}.finder{padding:18px}.section-head h2{font-size:29px}}
+@media(max-width:520px){.wrap{padding:0 15px}.actions .btn{width:100%}.hero h1{font-size:40px}.hero p{font-size:17px}}
 </style>
 </head>
 <body>
 <header>
-<div class="container hero">
-<span class="badge">FREE GARDEN TOOL DONATION FINDER</span>
-<h1>Where to Donate Garden Tools?</h1>
-<p>Find a better home for usable garden tools, lawn equipment and gardening supplies. Search by ZIP code, compare common donation options, check whether an item is ready to donate, and estimate a possible resale value for planning purposes.</p>
-<div class="finder">
-<h2 style="margin-top:0">Find Donation Options Near You</h2>
+<div class="wrap">
+<div class="top"><a class="brand" href="/">Garden Tool Donation Finder</a><nav class="nav" aria-label="Primary"><a href="#finder">Find Options</a><a href="#condition">Condition Checker</a><a href="#value">Value Estimator</a><a href="#guide">Guide</a><a href="#faq">FAQs</a></nav></div>
+<div class="hero">
+<span class="eyebrow">FREE U.S. DONATION FINDER</span>
+<h1>Where to Donate Garden Tools Near You</h1>
+<p>Find donation centers, reuse programs, community gardens, and other options for donating garden tools, lawn equipment, and gardening supplies.</p>
+<div class="finder" id="finder">
+<h2 style="margin:0 0 15px">Find Donation Options Near You</h2>
 <div class="grid">
-<div class="field"><label for="zip">ZIP Code</label><input id="zip" maxlength="10" inputmode="numeric" autocomplete="postal-code" placeholder="e.g. 75001" aria-describedby="zipHelp"><small id="zipHelp">Enter a U.S. ZIP code to personalize the suggestions.</small></div>
-<div class="field"><label for="item">What are you donating?</label><select id="item"><option>Hand tools</option><option>Power tools</option><option>Lawn mower</option><option>Trimmer / blower</option><option>Wheelbarrow</option><option>Garden pots & supplies</option><option>Large equipment</option></select></div>
-<div class="field"><label for="method">Preferred method</label><select id="method"><option>Drop-off</option><option>Pickup</option><option>Either</option></select></div>
+<div class="field"><label for="zip">ZIP Code, City or State</label><input id="zip" maxlength="60" autocomplete="postal-code" placeholder="e.g. 75001 or Dallas, TX"><small class="small">U.S. locations only. No exact local database is connected yet.</small></div>
+<div class="field"><label for="item">What are you donating?</label><select id="item">
+<option>Hand tools</option><option>Shovel</option><option>Rake</option><option>Hoe</option><option>Spade</option><option>Pruning shears</option><option>Garden hose</option><option>Garden pots & planters</option><option>Wheelbarrow</option><option>Power tools</option><option>Lawn mower</option><option>String trimmer</option><option>Hedge trimmer</option><option>Leaf blower</option><option>Edger</option><option>Chainsaw</option><option>Large lawn equipment</option><option>Other</option>
+</select></div>
+<div class="field"><label for="method">Donation method</label><select id="method"><option>Either</option><option>Drop-off</option><option>Pickup</option></select></div>
 </div>
-<button class="primary" style="margin-top:15px" onclick="findOptions()" aria-label="Find garden tool donation options">Find Options</button>
-<div id="results" class="results" role="status" aria-live="polite"></div>
+<div class="actions"><button class="btn primary" id="findBtn">Find Options</button><button class="btn secondary" id="locBtn">Use My Location</button><button class="btn outline" id="clearBtn" type="button">Clear</button></div>
+<div id="finderStatus" class="status" role="status" aria-live="polite">Enter a ZIP code or city to begin.</div>
+<div id="results" class="results"></div>
+</div>
 </div>
 </div>
 </header>
+
 <main>
-<section><div class="container"><div class="section-title"><h2>Best Places to Donate Garden Tools</h2><p>Availability varies by location, so always confirm with the local organization before taking equipment in.</p></div>
+<section>
+<div class="wrap"><div class="section-head"><h2>Start With the Right Donation Option</h2><p>These are categories and official starting points—not claimed local results. Acceptance, hours and pickup policies must be verified with the specific location.</p></div>
 <div class="cards">
-<div class="card"><div class="icon">🏠</div><h3>Habitat ReStore</h3><p>Many ReStores accept hand tools, power tools and gardening items in usable condition. Some locations offer pickup for larger donations.</p><a href="https://www.habitat.org/restores/donate-goods" target="_blank" rel="noopener">Check Habitat ReStore donation options →</a></div>
-<div class="card"><div class="icon">🤝</div><h3>Goodwill</h3><p>Local Goodwill organizations may accept tools and lawn or garden equipment. Policies differ by location and donation center.</p><a href="https://www.goodwill.org/" target="_blank" rel="noopener">Visit Goodwill donation information →</a></div>
-<div class="card"><div class="icon">❤️</div><h3>The Salvation Army</h3><p>Some locations accept household and tool donations and may provide pickup services for qualifying items.</p><a href="https://satruck.org/" target="_blank" rel="noopener">Find Salvation Army donation locations →</a></div>
-<div class="card"><div class="icon">🌱</div><h3>Community Gardens</h3><p>Local community gardens can be excellent destinations for usable hand tools, watering cans, pots and shared equipment.</p><p><strong>Tip:</strong> Contact the garden first and ask what it currently needs.</p></div>
-<div class="card"><div class="icon">🏫</div><h3>Schools & Youth Programs</h3><p>School gardening clubs, vocational programs and youth organizations may welcome safe, usable gardening equipment.</p><p><strong>Tip:</strong> Ask before dropping items off.</p></div>
-<div class="card"><div class="icon">♻️</div><h3>Recycle or Reuse</h3><p>Broken or unsafe tools may be better suited to repair, reuse, a tool-parts program, recycling or scrap-metal collection rather than a charity.</p><p><strong>Never donate leaking or hazardous equipment.</strong></p></div>
-</div></div></section>
+<div class="card"><div class="icon">🏠</div><h3>Habitat ReStore</h3><p>Many local ReStores accept usable home-improvement items, and some accept tools or larger donations. Local rules vary.</p><a data-event="official-resource" href="https://www.habitat.org/restores/donate-goods" target="_blank" rel="noopener">Official donation information →</a></div>
+<div class="card"><div class="icon">🤝</div><h3>Goodwill</h3><p>Goodwill organizations operate locally, so acceptance policies for tools and equipment can differ between locations.</p><a data-event="official-resource" href="https://www.goodwill.org/" target="_blank" rel="noopener">Official Goodwill site →</a></div>
+<div class="card"><div class="icon">❤️</div><h3>Salvation Army</h3><p>Some locations offer donation services and pickup for qualifying items. Confirm the local center's rules first.</p><a data-event="official-resource" href="https://satruck.org/" target="_blank" rel="noopener">Official donation locator →</a></div>
+<div class="card"><div class="icon">🌱</div><h3>Community Gardens</h3><p>Usable hand tools, pots, hoses and shared equipment may be useful to community gardens. Contact first.</p></div>
+<div class="card"><div class="icon">🏫</div><h3>Schools & Youth Programs</h3><p>School gardens, vocational programs and youth groups may accept safe gardening equipment when requested.</p></div>
+<div class="card"><div class="icon">♻️</div><h3>Reuse & Recycling</h3><p>Unsafe, unusable or heavily damaged items may be better suited to repair, reuse or appropriate recycling.</p></div>
+</div></div>
+</section>
 
-<section style="background:#eef6ee"><div class="container"><div class="section-title"><h2>Is Your Garden Tool Ready to Donate?</h2><p>Use this quick condition checker before visiting a donation center.</p></div><div class="two">
-<div class="tool checklist">
-<label><input type="checkbox" class="good"> Tool is safe to handle</label>
-<label><input type="checkbox" class="good"> No exposed electrical wiring</label>
-<label><input type="checkbox" class="good"> No major cracks or structural damage</label>
-<label><input type="checkbox" class="good"> Cleaned and reasonably presentable</label>
-<label><input type="checkbox" class="good"> Power equipment starts or works properly (if applicable)</label>
-<label><input type="checkbox" class="good"> Fuel or oil leaks have been ruled out</label>
-<button class="primary" onclick="checkCondition()" aria-label="Check garden tool donation condition">Check Condition</button><div id="conditionAnswer" class="answer" role="status" aria-live="polite"></div>
+<section class="alt" id="condition">
+<div class="wrap"><div class="section-head"><h2>Garden Tool Condition Checker</h2><p>Answer the questions below. This is a screening tool, not a professional safety certification.</p></div>
+<div class="two">
+<div class="tool check">
+<label><input type="checkbox" class="cond"> Safe to handle</label>
+<label><input type="checkbox" class="cond"> Works as intended, if applicable</label>
+<label><input type="checkbox" class="cond"> No major structural damage</label>
+<label><input type="checkbox" class="cond"> No exposed wiring</label>
+<label><input type="checkbox" class="cond"> No fuel or oil leak</label>
+<label><input type="checkbox" class="cond"> Not known to be recalled for a safety defect</label>
+<label><input type="checkbox" class="cond"> Clean and reasonably presentable</label>
+<label><input type="checkbox" class="cond"> Important accessories are included, if applicable</label>
+<button class="btn primary" id="conditionBtn" style="margin-top:14px">Check Condition</button>
+<div id="conditionAnswer" class="answer" role="status" aria-live="polite"></div>
 </div>
-<div class="tool"><h3>What Should Usually Not Be Donated?</h3><ul><li>Tools with exposed wiring or serious safety defects</li><li>Equipment leaking fuel, oil or other hazardous fluids</li><li>Severely broken or badly rusted tools</li><li>Items recalled for a safety defect</li><li>Used pesticide or herbicide containers and hazardous chemicals</li></ul><div class="notice"><strong>Important:</strong> Acceptance rules are set by each organization and can differ between locations.</div></div>
-</div></div></section>
+<div class="tool"><h3>When donation may not be appropriate</h3><ul><li>Exposed electrical wiring or serious safety defects</li><li>Fuel, oil or hazardous-fluid leaks</li><li>Severe structural damage</li><li>Known safety recalls that have not been addressed</li><li>Hazardous chemicals or containers</li></ul><div class="notice"><strong>Always verify:</strong> The receiving organization decides what it can accept.</div></div>
+</div></div>
+</section>
 
-<section><div class="container"><div class="section-title"><h2>Garden Tool Donation Value Estimator</h2><p>This is an educational estimate—not a tax valuation or professional appraisal.</p></div><div class="tool"><div class="grid">
-<div class="field"><label for="price">Original or replacement price ($)</label><input id="price" type="number" min="0" placeholder="100"></div>
-<div class="field"><label for="cond">Condition</label><select id="cond"><option value=".2">Fair / heavily used</option><option value=".4" selected>Good / used</option><option value=".6">Very good</option><option value=".75">Excellent / like new</option></select></div>
-<div class="field"><label for="qty">Quantity</label><input id="qty" type="number" min="1" value="1"></div>
-</div><button class="primary" style="margin-top:15px" onclick="estimate()" aria-label="Estimate garden tool value">Estimate</button><div id="estimate" class="answer" role="status" aria-live="polite"></div></div></div></section>
+<section id="value">
+<div class="wrap"><div class="section-head"><h2>Garden Tool Donation Value Estimator</h2><p>Returns a range for planning. It is not a tax valuation, appraisal or guarantee of market value.</p></div>
+<div class="tool"><div class="grid">
+<div class="field"><label for="price">Original / replacement price ($)</label><input id="price" type="number" min="0" step="1" placeholder="100"></div>
+<div class="field"><label for="age">Approximate age</label><select id="age"><option value=".75">Under 1 year</option><option value=".6">1–3 years</option><option value=".45" selected>4–7 years</option><option value=".3">8–12 years</option><option value=".2">Over 12 years</option></select></div>
+<div class="field"><label for="vcond">Condition</label><select id="vcond"><option value=".35">Fair</option><option value=".55" selected>Good</option><option value=".72">Very good</option><option value=".85">Excellent</option></select></div>
+</div><div class="actions"><button class="btn primary" id="estimateBtn">Estimate Range</button></div><div id="estimate" class="answer" role="status" aria-live="polite"></div></div></div>
+</section>
 
-<section style="background:#f0f6f1"><div class="container"><div class="section-title"><h2>Donation Prep Checklist</h2><p>Prepare your tools before drop-off or pickup.</p></div><div class="cards">
-<div class="card"><h3>1. Clean</h3><p>Remove soil, grass and debris. Wipe metal surfaces and dry everything thoroughly.</p></div>
-<div class="card"><h3>2. Inspect</h3><p>Check handles, blades, cords, switches and moving parts. Separate anything unsafe.</p></div>
-<div class="card"><h3>3. Group</h3><p>Bundle similar hand tools and keep accessories, chargers and attachments together.</p></div>
-<div class="card"><h3>4. Check Policy</h3><p>Call the exact donation center before arriving. Local acceptance rules can be different.</p></div>
-<div class="card"><h3>5. Photograph</h3><p>For large-item pickup, keep clear photos and an item list ready if the organization requests them.</p></div>
-<div class="card"><h3>6. Ask for a Receipt</h3><p>If you need donation documentation, request the appropriate receipt or acknowledgment from the organization.</p></div>
-</div></div></section>
+<section class="alt">
+<div class="wrap"><div class="section-head"><h2>Donation Prep Checklist</h2><p id="prepText">0% complete</p><div class="progress" aria-label="Donation checklist progress"><i id="prepBar"></i></div></div>
+<div class="cards">
+<div class="card"><label class="prep-row"><input type="checkbox" class="prep"> <span><strong>Clean:</strong> Remove soil, grass and debris; dry the item.</span></label></div>
+<div class="card"><label class="prep-row"><input type="checkbox" class="prep"> <span><strong>Inspect:</strong> Check handles, blades, cords, switches and moving parts.</span></label></div>
+<div class="card"><label class="prep-row"><input type="checkbox" class="prep"> <span><strong>Organize:</strong> Keep accessories, chargers and attachments together.</span></label></div>
+<div class="card"><label class="prep-row"><input type="checkbox" class="prep"> <span><strong>Secure:</strong> Protect sharp edges and follow equipment transport instructions.</span></label></div>
+<div class="card"><label class="prep-row"><input type="checkbox" class="prep"> <span><strong>Confirm:</strong> Contact the exact location before drop-off or pickup.</span></label></div>
+<div class="card"><label class="prep-row"><input type="checkbox" class="prep"> <span><strong>Document:</strong> Ask for appropriate donation documentation if needed.</span></label></div>
+</div></div>
+</section>
 
-<section><div class="container content"><div class="section-title"><h2>How to Donate Garden Tools and Lawn Equipment</h2><p>A practical guide to finding a useful second home for gardening equipment.</p></div>
-<p>If you are wondering where to donate garden tools, start by deciding whether the item is safe, usable and likely to be useful to another person or organization. Hand tools, working lawn equipment, watering supplies and other gardening items can sometimes be reused instead of being discarded. The best destination depends on the item, its condition and the acceptance rules in your area.</p>
-<h3>Start With the Condition of the Item</h3><p>Before searching for a donation center, inspect the tool carefully. A usable shovel, rake, pruning tool or wheelbarrow may only need cleaning. Power equipment deserves additional checks because damaged cords, leaking fuel or mechanical safety problems can make an item unsuitable for donation. If an item is unsafe, repair or recycling may be more appropriate than passing the problem to a charity.</p>
-<h3>Search for Garden Tool Donation Options by ZIP Code</h3><p>Enter a U.S. ZIP code above to organize your search. The finder provides general suggestions based on the type of item and your preferred drop-off or pickup method. Always contact the specific local organization before traveling because one branch may accept an item that another branch does not.</p>
-<h3>Consider Community-Based Donation Options</h3><p>Charities are not the only places that may need gardening supplies. Community gardens, school gardens, youth programs and neighborhood reuse projects can sometimes benefit from usable hand tools, pots, hoses and other supplies. These options can be especially helpful when you want donated equipment to stay in active use within your community.</p>
-<h3>Prepare Lawn Equipment Carefully</h3><p>Lawn mowers, trimmers and blowers can have stricter acceptance requirements. Confirm whether the organization accepts the equipment and whether it must be in working order. Do not assume that every donation center can handle fuel-powered or large equipment. Follow the receiving organization's instructions and local safety rules before transport.</p>
-<h3>Donation Receipts and Value Information</h3><p>Donation organizations may provide receipts or acknowledgments, but this website cannot determine tax deductibility or assign an official tax value to an item. The value estimator above is only an educational planning tool based on the information you enter. For tax questions, current rules and documentation requirements, review official guidance or consult a qualified tax professional.</p>
-<h3>Why Reuse Garden Tools?</h3><p>Extending the useful life of durable equipment can reduce waste and help useful items reach people or projects that need them. Donation is most valuable when the recipient can safely use the item. Taking a few minutes to clean, inspect and organize tools can make the donation process easier for both you and the receiving organization.</p>
-</div></section>
+<section id="guide">
+<div class="wrap content"><div class="section-head"><h2>Garden Tool Donation Guide</h2><p>Practical steps for giving garden tools and lawn equipment a useful second life.</p></div>
+<h3>1. Identify the item</h3><p>Choose the closest category: hand tools, lawn equipment, power tools, gardening supplies or large equipment. Different organizations may have different acceptance requirements.</p>
+<h3>2. Check condition</h3><p>Clean, usable and safe items are generally easier for organizations to process. Power equipment deserves extra attention because electrical, mechanical and fuel-related hazards can affect acceptance.</p>
+<h3>3. Search by ZIP or city</h3><p>Use the finder above to organize your search. This site currently provides a discovery workflow and official-source starting points; it does not claim that a particular local branch accepts your item unless that branch confirms it.</p>
+<h3>4. Consider community reuse</h3><p>Community gardens, schools, youth programs, tool libraries and local reuse programs can sometimes use gardening supplies directly. Contact them before transporting items.</p>
+<h3>5. Prepare lawn equipment carefully</h3><p>Lawn mowers, blowers, trimmers and other equipment can have stricter rules. Confirm acceptance and follow the recipient's transport and safety instructions.</p>
+<h3>6. Keep donation documentation</h3><p>If you need a receipt or acknowledgment, request it from the receiving organization. This website does not determine tax deductibility or official donation values.</p>
+<div class="links" aria-label="Donation topic links">
+<a href="#guide">Donate Hand Tools</a><a href="#guide">Donate Lawn Equipment</a><a href="#guide">Donate Lawn Mowers</a><a href="#guide">Donate Power Tools</a><a href="#guide">Donate Gardening Supplies</a><a href="#guide">Garden Tool Recycling</a><a href="#guide">Garden Tool Donation Guide</a>
+</div>
+</div>
+</section>
 
-<section style="background:#eef6ee"><div class="container content"><div class="section-title"><h2>Garden Tool Donation Near Me: What to Search For</h2><p>Use clear, location-specific searches when looking for nearby reuse opportunities.</p></div>
-<p>When looking for a garden tool donation near you, combine your city or ZIP code with the type of organization you want to contact. Useful searches may include community garden, tool library, reuse center, donation center or lawn equipment recycling. Check each organization's official website or contact information before transporting large or heavy items.</p>
-<div class="internal-links"><a href="/donate-hand-tools/">Donate Hand Tools</a><a href="/donate-lawn-equipment/">Donate Lawn Equipment</a><a href="/donate-gardening-supplies/">Donate Gardening Supplies</a><a href="/garden-tool-donation-guide/">Garden Tool Donation Guide</a></div>
-<p>These internal paths are prepared for future content pages. When pages are published, link them back to this main donation guide and connect related pages so important content does not become orphaned.</p>
-</div></section>
+<section class="alt" id="near-me">
+<div class="wrap content"><div class="section-head"><h2>Garden Tool Donation Near Me</h2><p>Search with a ZIP code, city or state and then verify the exact organization before you travel.</p></div>
+<p>Useful local search types include community gardens, tool libraries, reuse centers, donation centers, Habitat ReStores, Goodwill organizations and appropriate recycling facilities. For large or heavy equipment, confirm pickup requirements before moving the item.</p>
+<div class="notice"><strong>Why no fake local results?</strong> This site does not invent addresses, phone numbers, ratings or donation-center locations. A production locator should connect the frontend to a verified organization database or location API before presenting local results as real.</div>
+</div>
+</section>
 
-<section><div class="container"><div class="section-title"><h2>Frequently Asked Questions</h2></div><div class="faq">
-<details><summary>Can I donate broken garden tools?</summary><p>Usually, charities prefer safe and usable items. Severely broken or unsafe tools are often better handled through repair, reuse or recycling programs.</p></details>
-<details><summary>Can I donate a lawn mower?</summary><p>Some organizations accept working lawn equipment, but policies vary. Confirm whether the specific location accepts mowers and whether pickup is available.</p></details>
-<details><summary>Do all Habitat ReStores accept the same items?</summary><p>No. Local ReStores can have different acceptance rules, so contact the specific store to confirm what it accepts and its donation hours.</p></details>
-<details><summary>Can I get a tax deduction for donated tools?</summary><p>Potentially, depending on the receiving organization and applicable requirements. Keep appropriate documentation and consult current official guidance or a tax professional for your situation.</p></details>
-<details><summary>Where should I donate garden tools if there is no charity nearby?</summary><p>Try community gardens, schools, neighborhood gardening groups, tool libraries, local reuse programs or appropriate recycling facilities. Contact them first to confirm they want the items.</p></details>
-<details><summary>Should I clean garden tools before donating them?</summary><p>Yes. Removing soil, grass and loose debris makes items easier to inspect and handle. Clean, dry and reasonably presentable equipment is generally easier for an organization to process.</p></details>
-</div></div></section>
+<section id="faq">
+<div class="wrap content"><div class="section-head"><h2>Frequently Asked Questions</h2></div><div class="faq">
+<details><summary>Where can I donate garden tools?</summary><p>Possible options include reuse centers, Habitat ReStores, Goodwill organizations, community gardens, schools, tool libraries and nonprofits. Acceptance varies by location.</p></details>
+<details><summary>Can I donate a lawn mower?</summary><p>Some organizations accept lawn mowers, but requirements vary. Confirm that the exact location accepts your mower and whether it must be working.</p></details>
+<details><summary>Can I donate broken garden tools?</summary><p>Severely broken or unsafe tools may be better suited to repair, reuse or recycling. Ask the receiving organization before dropping them off.</p></details>
+<details><summary>Can I donate rusty garden tools?</summary><p>Light surface rust may be repairable, but severe rust or structural damage can make a tool unsuitable. The receiving organization decides what it accepts.</p></details>
+<details><summary>Can I get a tax deduction for donated tools?</summary><p>Potentially, if applicable requirements are met. This website does not provide tax advice or determine deductibility.</p></details>
+<details><summary>Should I clean garden tools before donating?</summary><p>Yes. Remove soil, grass and loose debris, dry the item and keep accessories together when possible.</p></details>
+</div></div>
+</section>
+
+<section>
+<div class="wrap content"><div class="section-head"><h2>Trust & Information Policy</h2></div>
+<p>This website is a discovery and preparation tool. It does not guarantee acceptance, pickup, availability, donation value, tax deductibility or any organization's policies. Local organizations control their own acceptance rules, hours and services.</p>
+<p>Location information should be verified before travel. No fabricated local businesses, phone numbers, addresses, ratings or reviews are used as real results.</p>
+<h3>About</h3><p>Garden Tool Donation Finder helps people identify possible reuse and donation routes for garden tools, lawn equipment and gardening supplies.</p>
+<h3>Privacy</h3><p>The finder can use information you enter to generate on-page suggestions. Do not enter sensitive personal information. If browser location is used, it is requested through your browser and is not presented as a stored address by this page.</p>
+<h3>Disclaimer</h3><p>Content is educational. Safety decisions, recycling requirements, local acceptance policies and tax questions should be confirmed with the appropriate organization or official authority.</p>
+</div>
+</section>
 </main>
-<footer><div class="container"><h2>Garden Tool Donation Finder</h2><p>This free tool is designed to help you discover donation options and prepare your items. It does not guarantee acceptance, pickup, tax deductibility, value or availability at any specific organization.</p><p>Useful resources: <a href="https://www.habitat.org/restores" target="_blank" rel="noopener">Habitat ReStores</a> · <a href="https://www.goodwill.org/" target="_blank" rel="noopener">Goodwill</a> · <a href="https://satruck.org/" target="_blank" rel="noopener">Salvation Army Donation Centers</a></p></div></footer>
+
+<footer>
+<div class="wrap footer-grid">
+<div><h2>Garden Tool Donation Finder</h2><p class="legal">A free discovery and preparation tool for garden tool, lawn equipment and gardening-supply donations.</p><p class="legal">© 2026 Garden Tool Donation Finder</p></div>
+<div><strong>Donation Topics</strong><a href="#guide">Donate Garden Tools</a><a href="#guide">Donate Lawn Equipment</a><a href="#guide">Garden Tool Recycling</a><a href="#guide">Donation Guide</a><a href="#value">Value Estimator</a></div>
+<div><strong>Help</strong><a href="#condition">Condition Checker</a><a href="#faq">FAQs</a><a href="#near-me">Donation Near Me</a><a href="#guide">About & Disclaimer</a></div>
+</div>
+</footer>
+
 <script>
-function findOptions(){const zip=document.getElementById('zip').value.trim(),item=document.getElementById('item').value,method=document.getElementById('method').value,r=document.getElementById('results');if(!zip){r.style.display='block';r.innerHTML='<div class="notice">Please enter a U.S. ZIP code. For a real production locator, connect this form to a verified location API or your own donation-center database.</div>';return;}let pickup=(method==='Pickup'||method==='Either')?'Pickup may be available — confirm with the local branch.':'Drop-off';r.style.display='block';r.innerHTML=`<strong>Suggested starting points for ${item} near ${zip}</strong><div class="result-card"><h3>🏠 Habitat ReStore</h3><span class="tag">Tools</span><span class="tag">${pickup}</span><p>Good first option for usable tools and home-improvement items. Local rules vary.</p><a href="https://www.habitat.org/restores/donate-goods" target="_blank" rel="noopener">Open official Habitat donation information →</a></div><div class="result-card"><h3>🤝 Goodwill</h3><span class="tag">Check local policy</span><p>Policies are set by local Goodwill organizations, so confirm that ${item.toLowerCase()} is accepted.</p><a href="https://www.goodwill.org/" target="_blank" rel="noopener">Find Goodwill information →</a></div><div class="result-card"><h3>🌱 Local community garden</h3><span class="tag">Direct impact</span><p>Search for a community garden in your area and ask whether it currently needs ${item.toLowerCase()}.</p></div>`;}
-function checkCondition(){const boxes=[...document.querySelectorAll('.good')],yes=boxes.filter(x=>x.checked).length,a=document.getElementById('conditionAnswer');a.style.display='block';if(yes===boxes.length){a.innerHTML='<div class="score">READY TO DONATE</div><p>Your answers indicate the item is likely in good donation condition. Still confirm the organization’s current acceptance rules.</p>';}else if(yes>=4){a.innerHTML='<div class="score">LIKELY READY</div><p>Most checks passed. Fix or address the issue you left unchecked before donating.</p>';}else{a.innerHTML='<div class="score">CHECK BEFORE DONATING</div><p>The item may need cleaning, repair, recycling or another disposal route before donation.</p>';}}
-function estimate(){const p=parseFloat(document.getElementById('price').value)||0,c=parseFloat(document.getElementById('cond').value),q=parseInt(document.getElementById('qty').value)||1,v=p*c*q,a=document.getElementById('estimate');a.style.display='block';a.innerHTML='<div class="score">$'+v.toFixed(2)+'</div><p>Illustrative resale or value estimate for '+q+' item(s). Actual fair market value can differ substantially. This is not tax advice.</p>';}
+const $=id=>document.getElementById(id);
+function event(name,params={}){try{if(typeof gtag==='function')gtag('event',name,params)}catch(e){}}
+const examples=["75001","10001","30301","60601","77001","75201","85001","28202","78701","32801","33101","02108","98101","94105"];
+$("findBtn").addEventListener("click",()=>{
+ const place=$("zip").value.trim(),item=$("item").value,method=$("method").value,r=$("results");
+ if(!place){$("finderStatus").innerHTML="Please enter a U.S. ZIP code, city or state."; $("zip").focus(); return}
+ event("donation_search",{location:place,item:item,method:method});
+ $("finderStatus").innerHTML="Search prepared for <strong>"+escapeHtml(place)+"</strong>. These are verified-source starting points, not claimed local branch results.";
+ const query=encodeURIComponent(place+" "+item);
+ r.style.display="block";
+ r.innerHTML=
+ `<div class="notice"><strong>Important:</strong> No live donation-center database is connected yet, so this page will not invent local addresses or claim that a specific branch accepts your item.</div>
+ <div class="result"><h3>Habitat ReStore</h3><span class="tag">Official source</span><span class="tag">${escapeHtml(method)}</span><p>Check local ReStore acceptance rules for ${escapeHtml(item.toLowerCase())}.</p><a data-event="search-result" href="https://www.habitat.org/restores/donate-goods" target="_blank" rel="noopener">Check official Habitat donation information →</a></div>
+ <div class="result"><h3>Goodwill</h3><span class="tag">Local policy varies</span><p>Search for the local Goodwill organization serving ${escapeHtml(place)} and confirm acceptance.</p><a data-event="search-result" href="https://www.google.com/search?q=${query}+Goodwill+donation+center" target="_blank" rel="noopener">Search Goodwill near this location →</a></div>
+ <div class="result"><h3>Community garden / tool library</h3><span class="tag">Community reuse</span><p>Look for a local community garden, tool library or reuse project and ask whether it currently needs ${escapeHtml(item.toLowerCase())}.</p><a data-event="search-result" href="https://www.google.com/search?q=${query}+community+garden+tool+donation" target="_blank" rel="noopener">Search community reuse options →</a></div>`;
+});
+$("locBtn").addEventListener("click",()=>{
+ event("use_current_location");
+ if(!navigator.geolocation){$("finderStatus").textContent="Location is not available in this browser. Enter a ZIP code or city instead.";return}
+ $("finderStatus").textContent="Requesting your approximate location…";
+ navigator.geolocation.getCurrentPosition(pos=>{
+   $("finderStatus").innerHTML="Location received by your browser. For privacy, enter a ZIP/city above to run the donation search.";
+   event("location_received");
+ },()=>{$("finderStatus").textContent="Location permission was not granted. Enter a ZIP code or city instead.";});
+});
+$("clearBtn").addEventListener("click",()=>{$("zip").value="";$("results").style.display="none";$("finderStatus").textContent="Enter a ZIP code or city to begin.";});
+$("conditionBtn").addEventListener("click",()=>{
+ const n=document.querySelectorAll(".cond").length, yes=[...document.querySelectorAll(".cond")].filter(x=>x.checked).length,a=$("conditionAnswer");
+ event("condition_checker",{passed:yes,total:n}); a.style.display="block";
+ if(yes===n){a.className="answer";a.innerHTML='<div class="score">GREEN — LIKELY READY</div><p>Your answers indicate the item may be suitable for donation. Confirm the receiving organization’s current rules.</p>'}
+ else if(yes>=5){a.className="answer yellow";a.innerHTML='<div class="score">YELLOW — CHECK FIRST</div><p>Most checks passed, but one or more issues need attention or confirmation before donation.</p>'}
+ else{a.className="answer red";a.innerHTML='<div class="score">RED — MAY NOT BE APPROPRIATE</div><p>The item may need repair, safe disposal, recycling or another route before donation. This is not a professional safety assessment.</p>'}
+});
+$("estimateBtn").addEventListener("click",()=>{
+ const p=Math.max(0,parseFloat($("price").value)||0),age=parseFloat($("age").value),cond=parseFloat($("vcond").value),base=p*age*cond,low=base*.8,high=base*1.2,a=$("estimate");
+ event("value_estimator",{price:p});a.style.display="block";a.className="answer";
+ a.innerHTML=`<div class="score">$${low.toFixed(0)}–$${high.toFixed(0)}</div><p>Illustrative planning range based on the information entered. Actual resale or fair-market value can differ substantially. Not a tax valuation.</p>`;
+});
+document.querySelectorAll(".prep").forEach(x=>x.addEventListener("change",updatePrep));
+function updatePrep(){const all=[...document.querySelectorAll(".prep")],done=all.filter(x=>x.checked).length,p=Math.round(done/all.length*100);$("prepBar").style.width=p+"%";$("prepText").textContent=p+"% complete";}
+document.addEventListener("click",e=>{const a=e.target.closest("a[data-event]");if(a)event(a.dataset.event,{destination:a.href})});
+function escapeHtml(s){return s.replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
 </script>
 </body>
 </html>
