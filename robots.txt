@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://garden-donate.vercel.app/sitemap.xml
+Sitemap: https://gardendonate.online/sitemap.xml
