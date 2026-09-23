@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="favGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#144d27"/>
+      <stop offset="100%" stop-color="#2a7a44"/>
+    </linearGradient>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4ade80"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+  </defs>
+  <!-- Background rounded shield/circle -->
+  <rect width="64" height="64" rx="16" fill="url(#favGrad)"/>
+  
+  <!-- Garden Trowel & Sprout Icon -->
+  <g transform="translate(6, 6)">
+    <!-- Trowel handle & blade -->
+    <path d="M12 40 L24 28 M22 26 L27 31" stroke="#f0b34f" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M26 26 C26 16, 38 12, 42 10 C40 16, 36 28, 26 26 Z" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5"/>
+    
+    <!-- Sprouting Leaves (symbolizing garden renewal & donation) -->
+    <path d="M22 20 C18 10, 10 14, 11 22 C16 22, 20 21, 22 20 Z" fill="url(#leafGrad)"/>
+    <path d="M30 14 C34 6, 43 7, 41 15 C36 15, 32 14, 30 14 Z" fill="#86efac"/>
+    
+    <!-- Little Heart (Giving/Donation) -->
+    <path d="M38 32 C38 29 41 27 43 29 C45 27 48 29 48 32 C48 36 43 40 43 40 C43 40 38 36 38 32 Z" fill="#ef4444"/>
+  </g>
+</svg>
