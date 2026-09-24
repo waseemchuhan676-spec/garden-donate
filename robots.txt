@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gardendonate.online/sitemap.xml
+Sitemap: https://www.gardendonate.online/sitemap.xml
