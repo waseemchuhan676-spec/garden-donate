@@ -77,7 +77,7 @@ gtag('js',new Date());gtag('config','G-3V9ND28MWL');
           "name":"Will Habitat ReStore pick up lawn mowers from my home?",
           "acceptedAnswer":{
             "@type":"Answer",
-            "text":"Yes, most Habitat ReStore locations provide free scheduled home pickup for riding lawn mowers, push mowers, and large bulk tool donations. You typically need to schedule 1 to 2 weeks in advance via their website."
+            "text":"Pickup may be available at some local locations. Many Habitat ReStores offer scheduled pickup for larger items such as riding lawn mowers or bulk equipment, but policies, vehicle availability, and intake rules vary by local affiliate. Check with your specific local ReStore to confirm current pickup availability."
           }
         },
         {
@@ -85,7 +85,7 @@ gtag('js',new Date());gtag('config','G-3V9ND28MWL');
           "name":"Can you donate broken or non-working garden tools?",
           "acceptedAnswer":{
             "@type":"Answer",
-            "text":"Traditional thrift stores decline broken tools, but local Tool Libraries with repair clinics and neighborhood Buy Nothing groups enthusiastically welcome project tools and repairable lawn mowers."
+            "text":"Traditional thrift stores usually decline non-working items, but local Tool Libraries with repair clinics and neighborhood Buy Nothing or Freecycle groups often welcome project tools and repairable lawn mowers. Always describe item condition accurately."
           }
         },
         {
@@ -93,7 +93,7 @@ gtag('js',new Date());gtag('config','G-3V9ND28MWL');
           "name":"Are garden tool donations tax deductible?",
           "acceptedAnswer":{
             "@type":"Answer",
-            "text":"Yes, donating garden equipment to a certified 501(c)(3) nonprofit (such as Habitat ReStore, Goodwill, or Salvation Army) allows you to deduct the item's fair market value under IRS guidelines. Be sure to request an official written receipt."
+            "text":"Donations to qualified 501(c)(3) organizations may be tax-deductible if you itemize deductions, subject to IRS limits. Donation receipts depend on the receiving organization, and tax deductibility depends on applicable laws and individual circumstances. Consult a qualified tax professional for tax questions."
           }
         },
         {
@@ -101,7 +101,7 @@ gtag('js',new Date());gtag('config','G-3V9ND28MWL');
           "name":"Should I empty gasoline from a lawn mower before donating?",
           "acceptedAnswer":{
             "@type":"Answer",
-            "text":"Yes, strictly required. Charity transport trucks and thrift warehouses cannot transport or store equipment containing combustible gasoline or engine fluids due to municipal fire safety codes."
+            "text":"Yes, draining combustible gasoline and motor fluids is generally required due to municipal fire safety codes and transport regulations before donating power equipment."
           }
         },
         {
@@ -138,6 +138,10 @@ header{background:linear-gradient(135deg,#143d25,#2f7b45);color:#fff}
 .nav{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
 .nav a{color:#e9f7ec;text-decoration:none;font-size:14px;font-weight:700;padding:6px 12px;border-radius:8px;transition:background .2s}
 .nav a:hover,.nav a.active{background:rgba(255,255,255,.18);color:#fff}
+.mobile-toggle{display:none;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:22px;border-radius:8px;padding:6px 12px;cursor:pointer}
+.mobile-nav{display:none;flex-direction:column;gap:10px;padding:14px 0 20px;border-top:1px solid rgba(255,255,255,.2)}
+.mobile-nav a{color:#e9f7ec;text-decoration:none;font-size:15px;font-weight:700;padding:8px 12px;border-radius:8px;background:rgba(255,255,255,.1)}
+.mobile-nav a:hover{background:rgba(255,255,255,.2);color:#fff}
 .hero{padding:40px 0 55px}
 .eyebrow{display:inline-block;padding:6px 12px;border:1px solid #ffffff44;background:#ffffff14;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em}
 .hero h1{font-size:clamp(32px,5.5vw,56px);line-height:1.08;max-width:920px;margin:16px 0 12px}
@@ -153,6 +157,7 @@ section{padding:52px 0}
 .section-head{text-align:center;max-width:820px;margin:0 auto 34px}
 .section-head h2{font-size:32px;line-height:1.2;margin:0 0 10px;color:var(--dark)}
 .section-head p{color:var(--muted);font-size:16px;margin:0}
+.notice{background:var(--warnbg);border-left:4px solid #d18a2c;padding:14px 16px;border-radius:8px;font-size:14px;color:var(--ink)}
 
 .cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:22px}
 .org-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:space-between;transition:transform .2s,box-shadow .2s}
@@ -222,6 +227,7 @@ footer{background:#142d1f;color:#dcebdc;padding:40px 0}
 @media(max-width:850px){
   .cards-grid,.grid-2,.grid-3,.proto-grid,.footer-grid{grid-template-columns:1fr}
   .nav{display:none}
+  .mobile-toggle{display:block}
   .hero{padding:30px 0 45px}
   .matcher-box{padding:20px}
 }
@@ -237,9 +243,20 @@ footer{background:#142d1f;color:#dcebdc;padding:40px 0}
 <a href="index.html">Home</a>
 <a href="where-to-donate.html" class="active">Where to Donate</a>
 <a href="tools.html">Donation Tools</a>
-<a href="index.html#finder">Search by ZIP</a>
-<a href="#faq">FAQs</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
 </nav>
+<button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+</div>
+<div class="mobile-nav" id="mobileNav">
+<a href="index.html">Home</a>
+<a href="where-to-donate.html" class="active">Where to Donate</a>
+<a href="tools.html">Donation Tools</a>
+<a href="index.html#finder">Search by ZIP</a>
+<a href="about.html">About Us</a>
+<a href="contact.html">Contact Us</a>
+<a href="privacy-policy.html">Privacy Policy</a>
+<a href="terms.html">Terms of Use</a>
 </div>
 
 <div class="hero">
@@ -248,13 +265,13 @@ footer{background:#142d1f;color:#dcebdc;padding:40px 0}
   <span>›</span>
   <span style="color:#fff;font-weight:700">Where to Donate</span>
 </nav>
-<span class="eyebrow">2026 OFFICIAL DIRECTORY & COMPARISON</span>
+<span class="eyebrow">2026 DIRECTORY & COMPARISON</span>
 <h1>Where to Donate Garden Tools & Lawn Equipment</h1>
 <p>Compare policies, accepted items, pickup options, and tax deduction rules for the top 10 organizations that accept used gardening tools and power equipment.</p>
 
 <div class="finder-intent-box" style="background:#fff;color:var(--dark);padding:22px;border-radius:16px;box-shadow:0 18px 40px rgba(0,0,0,.15);margin-top:24px;max-width:920px">
   <div style="font-weight:900;font-size:19px;margin-bottom:6px;color:var(--dark)">🎯 Find Places by Your Exact Donation Intent:</div>
-  <p style="margin:0 0 16px;color:var(--muted);font-size:14px">Select your tool type and priority — we will instantly highlight the matching organizations and update local map links for your area.</p>
+  <p style="margin:0 0 16px;color:var(--muted);font-size:14px">Select your tool type and priority — we will highlight matching organizations and update local map search links for your area.</p>
   <div class="grid-3" style="margin-bottom:14px">
     <div class="field" style="margin:0">
       <label for="intentItem" style="font-weight:800;font-size:12px;color:var(--dark)">1. What are you donating?</label>
@@ -270,10 +287,10 @@ footer{background:#142d1f;color:#dcebdc;padding:40px 0}
       <label for="intentGoal" style="font-weight:800;font-size:12px;color:var(--dark)">2. What is your exact priority?</label>
       <select id="intentGoal" style="padding:10px;border-radius:8px;border:1px solid #cbd8ce;width:100%;min-height:44px">
         <option value="all">Any Donation Route</option>
-        <option value="pickup">🚚 Free Home Pickup (No driving)</option>
+        <option value="pickup">🚚 Home Pickup (May be available)</option>
         <option value="community">🌱 Direct Community Use (Food growing)</option>
         <option value="drop">📍 Quick Drive-Thru Drop-Off</option>
-        <option value="tax">📄 501(c)(3) Tax Write-Off</option>
+        <option value="tax">📄 501(c)(3) Receipt Option</option>
       </select>
     </div>
     <div class="field" style="margin:0">
@@ -290,10 +307,10 @@ footer{background:#142d1f;color:#dcebdc;padding:40px 0}
 
 <div class="filter-bar" style="margin-top:20px">
 <button class="filter-btn active" data-filter="all">All 10 Places</button>
-<button class="filter-btn" data-filter="pickup">🚚 Offers Free Pickup</button>
+<button class="filter-btn" data-filter="pickup">🚚 Pickup May Be Available</button>
 <button class="filter-btn" data-filter="power">⚡ Accepts Lawn Mowers & Power Tools</button>
 <button class="filter-btn" data-filter="community">🌱 Direct Community Use</button>
-<button class="filter-btn" data-filter="tax">📄 501(c)(3) Tax Receipt</button>
+<button class="filter-btn" data-filter="tax">📄 501(c)(3) Receipt Possible</button>
 </div>
 </div>
 </div>
@@ -307,6 +324,9 @@ footer{background:#142d1f;color:#dcebdc;padding:40px 0}
 <div class="section-head">
 <h2>Top 10 Organizations That Accept Garden Tools</h2>
 <p>Each organization operates under different rules. Review what they accept, what they decline, and whether they can collect items from your home.</p>
+<div class="notice" style="text-align:left;margin-top:16px">
+<strong>Important Note for Donors:</strong> Availability and accepted items can vary by local location. Contact the specific organization before visiting. Pickup may be available at some local locations. Check with the specific location for current availability.
+</div>
 </div>
 
 <div class="cards-grid" id="orgCardsGrid">
@@ -323,26 +343,26 @@ footer{background:#142d1f;color:#dcebdc;padding:40px 0}
 </div>
 </div>
 <div class="tag-list">
-<span class="tag tag-pickup">🚚 Free Pickup (Large Items)</span>
+<span class="tag tag-pickup">🚚 Pickup May Be Available</span>
 <span class="tag tag-tax">📄 501(c)(3) Tax Receipt</span>
 </div>
 <p style="font-size:14px;color:var(--ink)">ReStore locations sell new and gently used tools, lawn equipment, and building materials to fund affordable local home construction.</p>
 <div class="detail-list">
 <div class="detail-item">
 <strong>🎯 Best Exact Intent:</strong>
-<p>Donors who need free home pickup for lawnmowers or have large batches of tools.</p>
+<p>Donors who have working lawn mowers, power tools, or large batches of garden equipment.</p>
 </div>
 <div class="detail-item">
 <strong>✅ Accepted Items:</strong>
-<p>Riding mowers, push mowers, string trimmers, power tools, wheelbarrows, shovels, rakes, garden hardware.</p>
+<p>May accept riding mowers, push mowers, string trimmers, power tools, wheelbarrows, shovels, rakes, garden hardware. Availability and accepted items can vary by local location. Contact the specific organization before visiting.</p>
 </div>
 <div class="detail-item">
 <strong>❌ Generally Declined:</strong>
-<p>Broken tools, equipment with fuel/oil leaks, recalled models, severed cords.</p>
+<p>Broken tools, equipment with fuel or oil leaks, recalled models, severed electrical cords.</p>
 </div>
 <div class="detail-item">
 <strong>🚚 Pickup Policy:</strong>
-<p>Free truck pickup typically available for riding mowers or multi-item bulk tool donations. Book online 1–2 weeks ahead.</p>
+<p>Pickup may be available at some local locations. Check with the specific location for current availability. Where offered, truck pickup is typically scheduled in advance and prioritized for larger equipment or multi-item lots.</p>
 </div>
 </div>
 </div>
@@ -372,19 +392,19 @@ footer{background:#142d1f;color:#dcebdc;padding:40px 0}
 <div class="detail-list">
 <div class="detail-item">
 <strong>🎯 Best Exact Intent:</strong>
-<p>Fast, convenient weekend drive-thru drop-off for clean hand tools and garden accessories.</p>
+<p>Fast drive-thru drop-off for clean hand tools and compact garden supplies.</p>
 </div>
 <div class="detail-item">
 <strong>✅ Accepted Items:</strong>
-<p>Hand tools (pruners, shears, spades), corded electric trimmers, small battery tools with chargers, garden pots.</p>
+<p>May accept hand tools (pruners, shears, spades), corded electric trimmers, small battery tools with chargers, garden pots. Policies differ significantly by regional organization.</p>
 </div>
 <div class="detail-item">
 <strong>❌ Generally Declined:</strong>
-<p>Gas-powered equipment with fuel, rusty saws, large riding mowers (at most regional branches).</p>
+<p>Gas-powered equipment containing fuel, rusty saws, large riding mowers (at most regional branches).</p>
 </div>
 <div class="detail-item">
 <strong>🚚 Pickup Policy:</strong>
-<p>Home pickup is rarely offered; drop-off is quick and drive-thru staffed at hundreds of neighborhood donation centers.</p>
+<p>Home pickup is generally not available through most regional Goodwill organizations; drop-off is typically required. Contact the specific organization before visiting.</p>
 </div>
 </div>
 </div>
@@ -407,26 +427,26 @@ footer{background:#142d1f;color:#dcebdc;padding:40px 0}
 </div>
 </div>
 <div class="tag-list">
-<span class="tag tag-pickup">🚚 Scheduled Home Pickup</span>
+<span class="tag tag-pickup">🚚 Pickup May Be Available</span>
 <span class="tag tag-tax">📄 501(c)(3) Tax Receipt</span>
 </div>
 <p style="font-size:14px;color:var(--ink)">Proceeds from Salvation Army Family Stores directly support adult rehabilitation centers and disaster relief efforts.</p>
 <div class="detail-list">
 <div class="detail-item">
 <strong>🎯 Best Exact Intent:</strong>
-<p>Scheduling a residential pickup truck for working lawnmowers and heavy lawn power tools.</p>
+<p>Donating working lawnmowers, power tools, and household garden gear with potential pickup in select zip codes.</p>
 </div>
 <div class="detail-item">
 <strong>✅ Accepted Items:</strong>
-<p>Working lawnmowers, edgers, power tools, garden utility carts, hand tool sets.</p>
+<p>May accept working lawnmowers, edgers, power tools, garden utility carts, hand tool sets. Availability and accepted items can vary by local location.</p>
 </div>
 <div class="detail-item">
 <strong>❌ Generally Declined:</strong>
-<p>Equipment with oil spills, non-running motors, rusted blades missing guards.</p>
+<p>Equipment with oil leaks, non-running motors, rusted blades missing safety guards.</p>
 </div>
 <div class="detail-item">
 <strong>🚚 Pickup Policy:</strong>
-<p>Enter ZIP code on satruck.org to book a free scheduled pickup truck for qualifying larger lawn equipment items.</p>
+<p>Pickup may be available at some local locations. Check with the specific location or satruck.org for current availability and drop-off guidelines.</p>
 </div>
 </div>
 </div>
@@ -464,11 +484,11 @@ footer{background:#142d1f;color:#dcebdc;padding:40px 0}
 </div>
 <div class="detail-item">
 <strong>❌ Generally Declined:</strong>
-<p>Heavy commercial gas machinery with expensive maintenance requirements.</p>
+<p>Heavy commercial gas machinery with high fuel or maintenance overhead.</p>
 </div>
 <div class="detail-item">
 <strong>🚚 Pickup Policy:</strong>
-<p>Volunteers may arrange pickup for wheelbarrows or multiple tools. Call your neighborhood garden manager first.</p>
+<p>Most community gardens operate on a drop-off basis by mutual coordination with garden managers. Pickup is rarely available. Contact the specific organization before visiting.</p>
 </div>
 </div>
 </div>
@@ -492,7 +512,7 @@ footer{background:#142d1f;color:#dcebdc;padding:40px 0}
 </div>
 <div class="tag-list">
 <span class="tag tag-direct">🔄 Shared Community Tooling</span>
-<span class="tag-power">⚡ Power Tools Welcome</span>
+<span class="tag tag-drop">📍 Drop-Off During Hours</span>
 </div>
 <p style="font-size:14px;color:var(--ink)">Neighborhood tool libraries loan tools to residents just like book libraries, promoting DIY self-reliance and waste reduction.</p>
 <div class="detail-list">
@@ -510,7 +530,7 @@ footer{background:#142d1f;color:#dcebdc;padding:40px 0}
 </div>
 <div class="detail-item">
 <strong>🚚 Pickup Policy:</strong>
-<p>Drop-off during library operating hours. Volunteer mechanics sometimes accept repairable vintage hand tools.</p>
+<p>Drop-off during library operating hours is typical. Check with your local tool library for specific donation intake rules.</p>
 </div>
 </div>
 </div>
@@ -534,7 +554,7 @@ footer{background:#142d1f;color:#dcebdc;padding:40px 0}
 </div>
 <div class="tag-list">
 <span class="tag tag-direct">🎓 Youth Education</span>
-<span class="tag tag-tax">📄 School District Tax Receipt</span>
+<span class="tag tag-tax">📄 Tax Receipt May Apply</span>
 </div>
 <p style="font-size:14px;color:var(--ink)">High school agriculture classes (FFA), vocational landscaping programs, and elementary school gardens need safe gear for students.</p>
 <div class="detail-list">
@@ -548,11 +568,11 @@ footer{background:#142d1f;color:#dcebdc;padding:40px 0}
 </div>
 <div class="detail-item">
 <strong>❌ Generally Declined:</strong>
-<p>Dangerous tools with exposed blades, chainsaws, non-OSHA compliant power gear.</p>
+<p>Dangerous tools with exposed blades, chainsaws, non-compliant power gear.</p>
 </div>
 <div class="detail-item">
 <strong>🚚 Pickup Policy:</strong>
-<p>Coordinate directly with the school biology teacher, agriculture instructor, or PTA donation coordinator.</p>
+<p>Coordinate directly with the school biology teacher, agriculture instructor, or PTA coordinator. Drop-off procedures vary by school district.</p>
 </div>
 </div>
 </div>
@@ -575,8 +595,8 @@ footer{background:#142d1f;color:#dcebdc;padding:40px 0}
 </div>
 </div>
 <div class="tag-list">
-<span class="tag-power">⚡ Heavy Hardware Accepted</span>
-<span class="tag tag-tax">📄 Non-Profit Tax Receipt</span>
+<span class="tag tag-pickup">🚚 Pickup May Be Available</span>
+<span class="tag tag-tax">📄 501(c)(3) Tax Receipt</span>
 </div>
 <p style="font-size:14px;color:var(--ink)">Nonprofit building salvage centers (like ReBuilding Center, Construction Junction, Materials for the Arts) divert goods from landfills.</p>
 <div class="detail-list">
@@ -585,16 +605,16 @@ footer{background:#142d1f;color:#dcebdc;padding:40px 0}
 <p>Donating heavy landscaping equipment, bricklaying tools, or fencing along with garden gear.</p>
 </div>
 <div class="detail-item">
-<strong>✅ Best For / Accepted Items:</strong>
+<strong>✅ Accepted Items:</strong>
 <p>Heavy landscape tools, gas and electric lawn mowers, post drivers, garden fencing, paving tools, pavers, wheelbarrows.</p>
 </div>
 <div class="detail-item">
 <strong>❌ Generally Declined:</strong>
-<p>Broken plastic items, chemical pesticides, fertilizers.</p>
+<p>Broken plastic items, chemical pesticides, hazardous liquids.</p>
 </div>
 <div class="detail-item">
 <strong>🚚 Pickup Policy:</strong>
-<p>Many reuse centers offer box truck pickup for large batches of garden and building materials.</p>
+<p>Pickup may be available at some local locations for large batches of equipment or materials. Check with the specific center for current availability.</p>
 </div>
 </div>
 </div>
@@ -627,7 +647,7 @@ footer{background:#142d1f;color:#dcebdc;padding:40px 0}
 <p>Donating heavy-duty tree and brush pruning tools (loppers, bow saws, axes) for public trail maintenance.</p>
 </div>
 <div class="detail-item">
-<strong>✅ Best For / Accepted Items:</strong>
+<strong>✅ Accepted Items:</strong>
 <p>Loppers, bypass pruners, bow saws, heavy mattocks, Pulaski axes, brush clearing tools, wheelbarrows.</p>
 </div>
 <div class="detail-item">
@@ -636,7 +656,7 @@ footer{background:#142d1f;color:#dcebdc;padding:40px 0}
 </div>
 <div class="detail-item">
 <strong>🚚 Pickup Policy:</strong>
-<p>Contact the volunteer coordinator during organized monthly park clean-up workdays.</p>
+<p>Typically accepted during scheduled volunteer workdays or by advance coordination. Contact the specific conservancy before bringing items.</p>
 </div>
 </div>
 </div>
@@ -669,8 +689,8 @@ footer{background:#142d1f;color:#dcebdc;padding:40px 0}
 <p>Donating pots, planters, hoses, and garden decor to directly fund animal shelter rescue operations in your county.</p>
 </div>
 <div class="detail-item">
-<strong>✅ Best For / Accepted Items:</strong>
-<p>Garden decor, hand trowels, decorative planters, patio pots, hoses, small electric tools, garden figurines.</p>
+<strong>✅ Accepted Items:</strong>
+<p>Garden decor, hand trowels, decorative planters, patio pots, hoses, small electric tools, garden figurines. Acceptance varies by local store.</p>
 </div>
 <div class="detail-item">
 <strong>❌ Generally Declined:</strong>
@@ -678,7 +698,7 @@ footer{background:#142d1f;color:#dcebdc;padding:40px 0}
 </div>
 <div class="detail-item">
 <strong>🚚 Pickup Policy:</strong>
-<p>Drop-off directly at thrift store loading dock during donation intake hours.</p>
+<p>Drop-off is typically accepted at store locations during intake hours. Availability and accepted items can vary by local shelter.</p>
 </div>
 </div>
 </div>
@@ -708,19 +728,19 @@ footer{background:#142d1f;color:#dcebdc;padding:40px 0}
 <div class="detail-list">
 <div class="detail-item">
 <strong>🎯 Best Exact Intent:</strong>
-<p>Contactless same-day porch pickup with zero driving required, even for project tools that need minor repair.</p>
+<p>Contactless porch pickup with zero driving required, even for project tools that need minor repair.</p>
 </div>
 <div class="detail-item">
-<strong>✅ Best For / Accepted Items:</strong>
-<p>ANY item in any condition (even lawn mowers that need a tune-up or tools with light rust)! Neighbors love project tools.</p>
+<strong>✅ Accepted Items:</strong>
+<p>Usable tools, lawn mowers (even those needing tune-up), extra pots, or leftover garden materials. Neighbors often welcome project items.</p>
 </div>
 <div class="detail-item">
-<strong>❌ Generally Declined:</strong>
-<p>None — as long as you honestly describe the condition in your post.</p>
+<strong>❌ Tax Status Note:</strong>
+<p>Informal neighbor-to-neighbor gifting network; not a 501(c)(3) non-profit, so items do not qualify for tax deductions.</p>
 </div>
 <div class="detail-item">
 <strong>🚚 Pickup Policy:</strong>
-<p>Zero driving required! Neighbors pick up directly from your porch or driveway.</p>
+<p>Pickup is arranged directly between neighbors, typically from your porch or driveway.</p>
 </div>
 </div>
 </div>
@@ -730,10 +750,12 @@ footer{background:#142d1f;color:#dcebdc;padding:40px 0}
 </div>
 </div>
 
+</div>
+
 <div style="margin-top:48px">
 <div class="section-head" style="margin-bottom:18px">
-<h3 style="font-size:24px;color:var(--dark);margin-bottom:6px">Quick Comparison: Top 10 Garden Tool Donation Options</h3>
-<p>Compare pickup availability, accepted tool categories, and tax receipt eligibility across all 10 places.</p>
+<h3 style="font-size:24px;color:var(--dark);margin-bottom:6px">Comparison of Garden Tool Donation Options</h3>
+<p>Compare pickup availability, typical intake categories, and tax receipt eligibility across common donation routes.</p>
 </div>
 <div class="table-wrap">
 <table class="matrix-table">
@@ -741,9 +763,9 @@ footer{background:#142d1f;color:#dcebdc;padding:40px 0}
 <tr>
 <th>Organization</th>
 <th>Best Exact Intent</th>
-<th>Free Pickup?</th>
+<th>Pickup Availability*</th>
 <th>Accepts Lawn Mowers?</th>
-<th>501(c)(3) Tax Receipt?</th>
+<th>501(c)(3) Receipt Option*</th>
 <th>Primary Action</th>
 </tr>
 </thead>
@@ -751,86 +773,87 @@ footer{background:#142d1f;color:#dcebdc;padding:40px 0}
 <tr>
 <td><strong>1. Habitat ReStore</strong></td>
 <td>Large power tools & bulk yard gear</td>
-<td>✅ Yes (Scheduled truck)</td>
-<td>✅ Yes (Gas & electric)</td>
-<td>✅ Yes</td>
+<td>⚠️ Pickup may be available (varies by ReStore)</td>
+<td>✅ Yes (Gas & electric, drained)</td>
+<td>✅ Yes (501(c)(3))</td>
 <td><a href="https://www.habitat.org/restores/donate-goods" target="_blank" rel="noopener noreferrer">Official ReStore</a></td>
 </tr>
 <tr>
 <td><strong>2. Goodwill Industries</strong></td>
 <td>Quick drive-thru hand tool drop-off</td>
-<td>❌ Rare (Drop-off only)</td>
-<td>⚠️ Small electric only</td>
-<td>✅ Yes</td>
+<td>❌ Generally drop-off only</td>
+<td>⚠️ Small electric only (varies by region)</td>
+<td>✅ Yes (501(c)(3))</td>
 <td><a href="https://www.goodwill.org/donate/" target="_blank" rel="noopener noreferrer">Find Goodwill</a></td>
 </tr>
 <tr>
 <td><strong>3. The Salvation Army</strong></td>
 <td>Scheduled truck pickup for mowers</td>
-<td>✅ Yes (satruck.org)</td>
+<td>⚠️ Pickup may be available (check satruck.org)</td>
 <td>✅ Yes (Working order)</td>
-<td>✅ Yes</td>
+<td>✅ Yes (501(c)(3))</td>
 <td><a href="https://satruck.org/" target="_blank" rel="noopener noreferrer">Book Pickup</a></td>
 </tr>
 <tr>
 <td><strong>4. Community Gardens</strong></td>
 <td>Direct food growing & local greening</td>
-<td>⚠️ Volunteers may arrange</td>
-<td>⚠️ Push mowers / tillers</td>
-<td>⚠️ Depends on org</td>
+<td>❌ Drop-off only (volunteers occasionally assist)</td>
+<td>⚠️ Push mowers / tillers (if needed)</td>
+<td>⚠️ Depends on organization status</td>
 <td><a href="index.html#finder">Search by ZIP</a></td>
 </tr>
 <tr>
 <td><strong>5. Tool Lending Libraries</strong></td>
 <td>Shared neighborhood DIY access</td>
-<td>❌ Drop-off during hours</td>
-<td>✅ Yes (Safe electric/hand)</td>
-<td>✅ Yes</td>
+<td>❌ Drop-off during operating hours</td>
+<td>✅ Yes (Safe electric/hand tools)</td>
+<td>✅ Yes (Typically 501(c)(3))</td>
 <td><a href="tools.html#safety-checklist">Run Safety Check</a></td>
 </tr>
 <tr>
 <td><strong>6. High School FFA & Gardens</strong></td>
 <td>Youth agricultural & vocational education</td>
-<td>⚠️ Coordinate with instructor</td>
-<td>⚠️ Safe battery gear</td>
-<td>✅ Yes (School district)</td>
+<td>⚠️ Coordinate directly with instructor</td>
+<td>⚠️ Safe battery gear / hand tools</td>
+<td>✅ Yes (School district acknowledgment)</td>
 <td><a href="index.html#finder">Find Programs</a></td>
 </tr>
 <tr>
 <td><strong>7. Material Reuse Centers</strong></td>
 <td>Heavy landscaping, pavers, fencing</td>
-<td>✅ Yes (Bulk truck pickup)</td>
+<td>⚠️ Pickup may be available for bulk lots</td>
 <td>✅ Yes (Gas & electric)</td>
-<td>✅ Yes</td>
+<td>✅ Yes (Nonprofit status varies)</td>
 <td><a href="tools.html#value-calculator">Estimate Value</a></td>
 </tr>
 <tr>
 <td><strong>8. Park Conservancies</strong></td>
 <td>Trail clearing, heavy brush pruning</td>
-<td>⚠️ Clean-up day intake</td>
+<td>⚠️ Intake during volunteer workdays</td>
 <td>❌ Hand & brush tools only</td>
-<td>✅ Yes</td>
+<td>✅ Yes (501(c)(3))</td>
 <td><a href="index.html#finder">Find Park Groups</a></td>
 </tr>
 <tr>
 <td><strong>9. Animal Shelter Thrifts</strong></td>
 <td>Planters, pots, decorative garden items</td>
 <td>❌ Store drop-off only</td>
-<td>⚠️ Electric trimmers/small</td>
-<td>✅ Yes</td>
+<td>⚠️ Electric trimmers/compact items</td>
+<td>✅ Yes (Charity thrift receipt)</td>
 <td><a href="index.html#finder">Find Shelter Thrifts</a></td>
 </tr>
 <tr>
 <td><strong>10. Buy Nothing & Freecycle</strong></td>
 <td>Zero driving porch pickup / project tools</td>
-<td>✅ Yes (Neighbor porch pickup)</td>
-<td>✅ Yes (Even needs repairs)</td>
-<td>❌ No (Gift economy)</td>
+<td>✅ Arranged directly with neighbor</td>
+<td>✅ Yes (Even items needing repair)</td>
+<td>❌ No (Gift economy; not deductible)</td>
 <td><a href="https://buynothingproject.org/find-a-group" target="_blank" rel="noopener noreferrer">Join Group</a></td>
 </tr>
 </tbody>
 </table>
 </div>
+<small style="display:block;margin-top:12px;color:var(--muted);font-size:13px;line-height:1.5">* <strong>Disclaimer:</strong> Availability and accepted items can vary by local location. Contact the specific organization before visiting. Pickup may be available at some local locations; check with the specific location for current availability. Tax deductibility depends on applicable laws and individual circumstances; consult a qualified tax professional.</small>
 </div>
 
 </div>
@@ -925,17 +948,17 @@ footer{background:#142d1f;color:#dcebdc;padding:40px 0}
 <div class="faq-grid">
 <div class="faq-card">
 <h3>Will Habitat ReStore pick up lawn mowers from my home?</h3>
-<p>Yes, most Habitat ReStore locations provide free scheduled home pickup for riding lawn mowers, push mowers, and large bulk tool donations. Pickup appointments should generally be scheduled 1 to 2 weeks in advance via your local ReStore's website.</p>
+<p>Pickup may be available at some local locations. Many Habitat ReStores offer scheduled pickup for larger items such as riding lawn mowers or bulk equipment, but policies, fees (if any), vehicle availability, and scheduling vary by local affiliate. Check with your specific local ReStore to confirm current pickup availability.</p>
 </div>
 
 <div class="faq-card">
 <h3>Can you donate broken or non-working garden tools?</h3>
-<p>While traditional thrift stores like Goodwill turn down non-working items, community Tool Libraries often operate repair cafes and happily accept fixable tools. Additionally, neighborhood Buy Nothing and Freecycle members enthusiastically take project tools for DIY restoration or scrap metal recycling.</p>
+<p>Traditional thrift stores usually decline broken or non-working items. However, some community tool libraries accept fixable tools for repair clinics or spare parts, and neighborhood Buy Nothing or Freecycle groups often welcome project tools for DIY restoration or metal recycling. Always describe item condition accurately.</p>
 </div>
 
 <div class="faq-card">
 <h3>Are garden tool donations tax deductible?</h3>
-<p>Yes! Donating tools or lawn machinery to a verified 501(c)(3) nonprofit qualifies for an itemized charitable tax deduction under IRS guidelines. Calculate the fair-market thrift value of your items with our <a href="tools.html#value-calculator">Tax Value Estimator</a> and request an official signed receipt at drop-off.</p>
+<p>Donations to qualified 501(c)(3) non-profit organizations may be tax-deductible if you itemize deductions on your federal tax return, subject to IRS limits and regulations. Donation receipts depend on the organization, and tax deductibility depends on applicable laws and individual circumstances. Users should keep their receipts and consult a qualified tax professional for tax questions. Garden Tool Donation Finder does not provide tax or legal advice.</p>
 </div>
 
 <div class="faq-card">
@@ -956,24 +979,32 @@ footer{background:#142d1f;color:#dcebdc;padding:40px 0}
 <footer>
 <div class="wrap footer-grid">
 <div>
-<div style="font-size:20px;font-weight:900;color:#fff;margin-bottom:8px">🌱 Garden Tool Donation Finder</div>
-<p class="small">A free discovery and preparation resource for garden tool, lawn equipment, and gardening-supply donations across the United States.</p>
+<h4>🌱 Garden Tool Donation Finder</h4>
+<p class="small">An independent informational resource dedicated to helping community members discover practical, sustainable reuse and donation options for garden tools and lawn equipment.</p>
 <p class="small">© 2026 Garden Tool Donation Finder. All rights reserved.</p>
 </div>
 <div>
-<strong>Donation Guides</strong>
-<a href="where-to-donate.html">Where to Donate (Overview)</a>
-<a href="#directory">Top 10 Organizations</a>
-<a href="#matcher">Donation Matcher Tool</a>
-<a href="#protocol">Pickup & Drop-off Rules</a>
-<a href="#faq">Frequently Asked Questions</a>
+<h4>Where to Donate</h4>
+<a href="where-to-donate.html">Where to Donate Guide</a>
+<a href="where-to-donate.html#directory">Top 10 Organizations</a>
+<a href="index.html#what-you-can-donate">Accepted Items Guide</a>
+<a href="index.html#comparison">Options Comparison</a>
+<a href="index.html#finder">Search by ZIP Code</a>
 </div>
 <div>
-<strong>Tools & Resources</strong>
-<a href="tools.html">Interactive Donation Tools</a>
+<h4>Donation Tools</h4>
 <a href="tools.html#value-calculator">Value & Tax Estimator</a>
+<a href="tools.html#decision-wizard">Donate or Recycle Wizard</a>
+<a href="tools.html#safety-checklist">Equipment Safety Checklist</a>
 <a href="tools.html#receipt-builder">Donation Receipt Builder</a>
-<a href="index.html#finder">Search by ZIP Code</a>
+<a href="index.html#faq">Frequently Asked Questions</a>
+</div>
+<div>
+<h4>About & Legal</h4>
+<a href="about.html">About Us</a>
+<a href="contact.html">Contact Us</a>
+<a href="privacy-policy.html">Privacy Policy</a>
+<a href="terms.html">Terms of Use</a>
 </div>
 </div>
 </footer>
@@ -984,6 +1015,16 @@ function track(name,params={}){try{if(typeof gtag==='function')gtag('event',name
 
 function escapeHtml(s){
   return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
+}
+
+const menuBtn=document.getElementById("mobileMenuBtn");
+const mobileNav=document.getElementById("mobileNav");
+if(menuBtn&&mobileNav){
+  menuBtn.addEventListener("click",()=>{
+    const open=menuBtn.getAttribute("aria-expanded")==="true";
+    menuBtn.setAttribute("aria-expanded",!open);
+    mobileNav.style.display=open?"none":"flex";
+  });
 }
 
 // ==========================================
@@ -1023,7 +1064,7 @@ function runIntentFilter(){
   const summary=$("intentMatchSummary");
   summary.style.display="block";
   const zipText=zip?` for <strong>${escapeHtml(zip)}</strong>`:"";
-  summary.innerHTML=`🎯 Found <strong>${matchedCount} organizations</strong> matching your exact intent${zipText}. Check the highlighted results below!`;
+  summary.innerHTML=`🎯 Found <strong>${matchedCount} organizations</strong> matching your criteria${zipText}. Check the highlighted results below!`;
 
   $("directory").scrollIntoView({behavior:"smooth",block:"start"});
 }
@@ -1077,7 +1118,6 @@ filterBtns.forEach(btn=>{
   });
 });
 
-
 // ==========================================
 // "BEST DONATION MATCH" MATCHER
 // ==========================================
@@ -1095,45 +1135,46 @@ $("findMatchBtn").addEventListener("click",()=>{
   resultBox.style.display="block";
 
   if(priority==="pickup"){
-    title.textContent="🏆 Top Recommendation: Habitat ReStore or Salvation Army";
-    desc.textContent="Because you need home or driveway pickup, large charity thrift fleets are your best option.";
+    title.textContent="🏆 Top Recommendation: Habitat ReStore or Salvation Army (Check Local Branch)";
+    desc.textContent="Because you prefer home or driveway pickup, organizations with scheduled truck fleets are your best starting point, though pickup availability varies by local location.";
     recs.innerHTML=`
       <strong>Recommended Options:</strong><br>
-      • <strong>Habitat for Humanity ReStore:</strong> Offers free truck pickup for riding mowers, tillers, and large batches of usable tools.<br>
-      • <strong>The Salvation Army (satruck.org):</strong> Schedules residential pickup trucks for functional lawn equipment.<br>
-      • <strong>Buy Nothing / Freecycle:</strong> If national charities are booked, post on your neighborhood group for zero-effort same-day porch pickup!
+      • <strong>Habitat for Humanity ReStore:</strong> Pickup may be available at some local locations for riding mowers, tillers, and large batches of usable tools. Check with your specific local ReStore.<br>
+      • <strong>The Salvation Army (satruck.org):</strong> Pickup may be available in select zip codes for functional equipment. Verify with your local branch.<br>
+      • <strong>Buy Nothing / Freecycle:</strong> For zero driving, coordinate directly with neighbors for porch or curbside pickup!
     `;
     actionBtn.href="https://www.habitat.org/restores/donate-goods";
-    actionBtn.textContent="Schedule Habitat ReStore Pickup →";
+    actionBtn.textContent="Check Habitat ReStore Donation Info →";
   }else if(priority==="community"){
     title.textContent="🏆 Top Recommendation: Community Gardens, Urban Farms & Tool Libraries";
-    desc.textContent="If your goal is putting tools into the hands of local gardeners and youth rather than reselling them in a store, community programs are ideal.";
+    desc.textContent="If your goal is putting tools directly into the hands of local growers and students rather than reselling them in a store, community programs are ideal.";
     recs.innerHTML=`
       <strong>Recommended Options:</strong><br>
       • <strong>Community Gardens & Urban Farms:</strong> Hand shovels, rakes, wheelbarrows, and hoses are put directly to work growing local food.<br>
-      • <strong>Neighborhood Tool Libraries:</strong> Clean tools are shared freely among neighbors for home repair and community improvement.<br>
-      • <strong>High School FFA / School Gardens:</strong> Help students learn horticulture and vocational skills.
+      • <strong>Neighborhood Tool Libraries:</strong> Clean tools are shared freely among neighbors for DIY and community improvement.<br>
+      • <strong>High School FFA / School Gardens:</strong> Help students learn horticulture and vocational landscaping skills.
     `;
     actionBtn.href="https://www.google.com/maps/search/?api=1&query=community+garden+near+me";
     actionBtn.textContent="Find Community Gardens Near You →";
   }else if(priority==="tax"){
-    title.textContent="🏆 Top Recommendation: Habitat ReStore, Goodwill, or Salvation Army";
-    desc.textContent="For a formal 501(c)(3) tax deduction slip and IRS Form 8283 documentation, nationally recognized non-profits are the standard.";
+    title.textContent="🏆 Top Recommendation: Verified 501(c)(3) Non-Profit Organizations";
+    desc.textContent="For donors planning to itemize non-cash charitable contributions, verified 501(c)(3) organizations provide donation receipts.";
     recs.innerHTML=`
       <strong>Recommended Options:</strong><br>
-      • <strong>Habitat ReStore:</strong> Gives tax donation receipts upon drop-off or driver pickup.<br>
-      • <strong>Goodwill Industries:</strong> Provides physical or digital tax receipts at drive-thru drop-off centers.<br>
-      • <strong>Tip:</strong> Remember to use our <a href="tools.html#receipt-builder" style="font-weight:800;color:var(--g)">Donation Receipt Builder</a> to itemize your tool valuations for your CPA!
+      • <strong>Habitat ReStore:</strong> Provides non-cash donation receipts upon drop-off or driver pickup.<br>
+      • <strong>Goodwill Industries:</strong> Provides donation receipts at donation centers.<br>
+      • <strong>The Salvation Army:</strong> Provides donation receipts at drop-off or scheduled pickup.<br>
+      • <strong>Important Tax Notice:</strong> Donation receipts depend on the receiving organization. Tax deductibility depends on applicable laws and individual taxpayer circumstances. Always retain official signed receipts and consult a qualified tax professional.
     `;
     actionBtn.href="tools.html#receipt-builder";
-    actionBtn.textContent="Build Itemized Tax Receipt →";
+    actionBtn.textContent="Open Donation Receipt Worksheet →";
   }else{
     title.textContent="🏆 Top Recommendation: Goodwill Drive-Thru or Local Animal Shelter Thrift";
-    desc.textContent="For immediate, hassle-free drop-off during your weekend errands without scheduling appointments.";
+    desc.textContent="For convenient drop-off during your weekend errands without scheduling advance appointments.";
     recs.innerHTML=`
       <strong>Recommended Options:</strong><br>
-      • <strong>Goodwill Donation Attendants:</strong> Most centers feature drive-up lanes where staff help unload your trunk in under 3 minutes.<br>
-      • <strong>Local Animal Shelter / Hospice Resale Shops:</strong> Convenient drop-off with 100% of proceeds staying in your local county.
+      • <strong>Goodwill Donation Centers:</strong> Many centers feature drive-up lanes where attendants assist with unloading.<br>
+      • <strong>Local Animal Shelter / Hospice Resale Shops:</strong> Convenient drop-off with 100% of proceeds supporting local community programs.
     `;
     actionBtn.href="index.html#finder";
     actionBtn.textContent="Search Local Drop-Off Centers by ZIP →";
