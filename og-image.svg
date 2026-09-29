@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0e2918"/>
@@ -58,6 +58,6 @@
   </g>
 
   <!-- Footer Branding -->
-  <text x="100" y="585" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800" fill="#6ee7b7">🌿 www.gardendonate.online</text>
+  <text x="100" y="585" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800" fill="#6ee7b7">🌿 gardendonate.online</text>
   <text x="1000" y="585" text-anchor="end" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#a7f3d0">100% Free • No Sign-Up Required</text>
 </svg>
