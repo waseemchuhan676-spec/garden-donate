@@ -1,0 +1,38 @@
+# ====================================================================
+# Garden Tool Donation Finder - Production .htaccess
+# Enforces HTTPS, non-www canonicalization, and performance caching
+# ====================================================================
+
+RewriteEngine On
+
+# 1. Enforce HTTPS and non-www (301 Permanent Redirect)
+# Redirects http:// and www.gardendonate.online to https://gardendonate.online
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\.gardendonate\.online$ [NC]
+RewriteRule ^(.*)$ https://gardendonate.online/$1 [L,R=301]
+
+# 2. Browser Caching (Speeds up repeat visits & improves Core Web Vitals)
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType text/javascript "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
+
+# 3. Gzip Compression (Reduces page load time)
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+# 4. Basic Security Headers
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
