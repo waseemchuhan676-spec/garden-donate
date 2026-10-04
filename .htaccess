@@ -5,7 +5,10 @@
 
 RewriteEngine On
 
-# 1. Enforce HTTPS and non-www (301 Permanent Redirect)
+# 1. Legacy & Consolidated 301 Permanent Redirects
+RewriteRule ^10-easy-places-to-donate\.html$ https://gardendonate.online/where-to-donate.html [R=301,L]
+
+# 2. Enforce HTTPS and non-www (301 Permanent Redirect)
 # Redirects http:// and www.gardendonate.online to https://gardendonate.online
 RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} ^www\.gardendonate\.online$ [NC]
