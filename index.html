@@ -9,6 +9,7 @@
 <meta name="theme-color" content="#143d25">
 <meta name="author" content="Garden Tool Donation Finder">
 <link rel="canonical" href="https://gardendonate.online/">
+<link rel="preconnect" href="https://www.googletagmanager.com">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="apple-touch-icon" href="favicon.svg">
 
@@ -183,6 +184,7 @@ header{background:linear-gradient(135deg,#143d25,#2f7b45);color:#fff}
 .nav a{color:#e9f7ec;text-decoration:none;font-size:14px;font-weight:700}
 .mobile-toggle{display:none;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:22px;border-radius:8px;padding:6px 12px;cursor:pointer}
 .mobile-nav{display:none;flex-direction:column;gap:10px;padding:14px 0 20px;border-top:1px solid rgba(255,255,255,.2)}
+.mobile-nav.open{display:flex}
 .mobile-nav a{color:#e9f7ec;text-decoration:none;font-size:15px;font-weight:700;padding:8px 12px;border-radius:8px;background:rgba(255,255,255,.1)}
 .mobile-nav a:hover{background:rgba(255,255,255,.2);color:#fff}
 .hero{padding:35px 0 45px}
@@ -488,7 +490,7 @@ footer{background:#142d1f;color:#dcebdc;padding:45px 0}
 <div class="cards">
 <div class="card">
 <h3>Shovels, Rakes &amp; Hoes</h3>
-<p>If you are deciding <strong>where to donate shovels and rakes</strong>, common hand tools like round-point shovels, leaf rakes, garden hoes, spades, and trowels are frequently accepted by community programs when wooden handles are sound and metal heads are intact. When <a href="articles/where-to-donate-used-gardening-tools.html">donating used gardening tools</a>, verify that working parts are clean and structurally solid.</p>
+<p>If you are deciding <strong>where to donate shovels and rakes</strong>, common hand tools like round-point shovels, leaf rakes, garden hoes, spades, and trowels are frequently accepted by community programs when wooden handles are sound and metal heads are intact. If you are assessing <a href="articles/what-to-do-with-old-garden-tools.html"><strong>what to do with old garden tools</strong></a>, our practical guide outlines donation, tool reconditioning, and sharing options. When <a href="articles/where-to-donate-used-gardening-tools.html">donating used gardening tools</a>, verify that working parts are clean and structurally solid.</p>
 </div>
 <div class="card">
 <h3>Pruning Tools &amp; Shears</h3>
@@ -508,7 +510,7 @@ footer{background:#142d1f;color:#dcebdc;padding:45px 0}
 </div>
 <div class="card">
 <h3>Broken or Rusty Tools</h3>
-<p>Light surface rust is often acceptable, but when considering <a href="articles/can-you-donate-broken-garden-tools.html">donating broken garden tools</a>, severely damaged, cracked, or unsafe implements are better suited for scrap metal recycling or municipal disposal than donation.</p>
+<p>Light surface rust is often acceptable, but when deciding <a href="articles/what-to-do-with-old-garden-tools.html"><strong>what to do with old garden tools</strong></a> that are damaged or cracked, explore <a href="articles/can-you-donate-broken-garden-tools.html">donating broken garden tools</a> to repair clinics or taking metal parts to scrap metal recycling facilities.</p>
 </div>
 </div>
 </div>
@@ -828,7 +830,7 @@ footer{background:#142d1f;color:#dcebdc;padding:45px 0}
 
 <details>
 <summary>What should I do with old gardening tools?</summary>
-<p>If an old tool is safe and usable, consider donating or reusing it. Clean and inspect it first. Broken or unsafe items may need repair, recycling, or another appropriate disposal route.</p>
+<p>If an old tool is safe and usable, consider donating or reusing it. Clean and inspect it first. Read our comprehensive guide on <a href="articles/what-to-do-with-old-garden-tools.html" style="color:var(--g);font-weight:700">what to do with old garden tools</a> for practical advice on repairing handles, neighborhood sharing, garden upcycling, and scrap metal recycling for broken implements.</p>
 </details>
 
 <details>
@@ -876,6 +878,8 @@ footer{background:#142d1f;color:#dcebdc;padding:45px 0}
 <div>
 <h4>Where to Donate</h4>
 <a href="where-to-donate.html">Where to Donate Guide</a>
+<a href="articles/what-to-do-with-old-garden-tools.html">What to Do With Old Garden Tools</a>
+<a href="articles/where-to-donate-a-lawn-mower.html">Where to Donate a Lawn Mower</a>
 <a href="#where">10 Places Directory</a>
 <a href="#what-you-can-donate">Accepted Items Guide</a>
 <a href="#comparison">Options Comparison</a>
@@ -904,7 +908,7 @@ const $=id=>document.getElementById(id);
 function track(name,params={}){try{if(typeof gtag==='function')gtag('event',name,params)}catch(e){}}
 function escapeHtml(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
 
-function makeSearchUrl(place,item,type){
+function makeSearchUrl(place,item,type,method){
   const terms={
     centers:"garden tool donation centers",
     gardens:"community garden donation garden tools",
@@ -917,25 +921,35 @@ function makeSearchUrl(place,item,type){
     schools:"school garden nonprofit donations",
     recycling:"garden tool recycling"
   };
-  return "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(place+" "+(terms[type]||"garden tool donation")+" "+item);
+  const baseTerm = terms[type] || "garden tool donation";
+  const pickupQuery = (method === "Pickup") ? " pickup" : "";
+  return "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(place+" "+baseTerm+" "+item+pickupQuery);
 }
 
 function renderResults(place,item,method){
   const safePlace=escapeHtml(place);
   const safeItem=escapeHtml(item);
-  const options=[
-    ["Garden Tool Donation Centers","Local donation options","centers","Search local donation centers"],
-    ["Community Gardens","Direct local reuse","gardens","Find community gardens"],
-    ["Habitat ReStore","Building & garden reuse","habitat","Search Habitat ReStores"],
-    ["Goodwill","Charity thrift options","goodwill","Search Goodwill locations"],
-    ["Local Charities","Community programs","charities","Find local charities"],
-    ["Tool Libraries","Shared equipment programs","libraries","Search tool libraries"],
-    ["Reuse Centers","Materials & tool reuse","reuse","Find reuse centers"]
+  let options=[
+    ["Habitat ReStore","Building & garden reuse • Truck pickup often available","habitat","Search Habitat ReStores", true],
+    ["Local Charities","Community programs • Many schedule truck pickups","charities","Find local charities", true],
+    ["Goodwill","Charity thrift options • Select areas offer pickup","goodwill","Search Goodwill locations", true],
+    ["Garden Tool Donation Centers","Local donation options","centers","Search local donation centers", true],
+    ["Reuse Centers","Materials & tool reuse • Inquire about partner hauling","reuse","Find reuse centers", true],
+    ["Community Gardens","Direct local reuse • Drop-off only","gardens","Find community gardens", false],
+    ["Tool Libraries","Shared equipment programs • Drop-off only","libraries","Search tool libraries", false]
   ];
 
+  let noticeHtml = '<strong>Local search starting points:</strong> Always confirm accepted items, hours, pickup availability and donation requirements with the specific organization before traveling.';
+  if(method === "Pickup"){
+    options = options.filter(o=>o[4]);
+    noticeHtml = '<strong>Pickup Search Active:</strong> Filtered to organizations that may offer residential or scheduled pickup for large equipment or tool batches. Note that small hand tools are typically drop-off only; truck pickups usually require riding mowers or multi-item batches. Confirm driver availability directly.';
+  } else if(method === "Drop-off"){
+    noticeHtml = '<strong>Drop-off Search Active:</strong> Showing community gardens, tool libraries, and local drop-off centers. Confirm operating hours and intake rules before visiting.';
+  }
+
   $("results").innerHTML=
-    '<div class="notice" style="margin-bottom:14px"><strong>Local search starting points:</strong> Always confirm accepted items, hours, pickup availability and donation requirements with the specific organization before traveling.</div>'+
-    options.map(o=>'<div class="result"><h3>'+o[0]+'</h3><span class="tag">'+o[1]+'</span><p>Search '+safePlace+' for '+safeItem+' options in this category, then verify the organization\'s current policy.</p><a class="btn-link" data-search-type="'+o[2]+'" href="'+makeSearchUrl(place,item,o[2])+'" target="_blank" rel="noopener noreferrer">'+o[3]+' →</a></div>').join("");
+    '<div class="notice" style="margin-bottom:14px">'+noticeHtml+'</div>'+
+    options.map(o=>'<div class="result"><h3>'+o[0]+'</h3><span class="tag">'+o[1]+'</span><p>Search '+safePlace+' for '+safeItem+' options in this category, then verify the organization\'s current policy.</p><a class="btn-link" data-search-type="'+o[2]+'" href="'+makeSearchUrl(place,item,o[2],method)+'" target="_blank" rel="noopener noreferrer">'+o[3]+' →</a></div>').join("");
   $("results").style.display="block";
 }
 
@@ -990,15 +1004,31 @@ $("clearBtn").addEventListener("click",()=>{
   track("donation_search_clear");
 });
 
-document.querySelectorAll(".prep").forEach(x=>x.addEventListener("change",updatePrep));
-function updatePrep(){
+function updatePrep(fireEvent=true){
   const all=[...document.querySelectorAll(".prep")];
-  const done=all.filter(x=>x.checked).length;
-  const p=Math.round(done/all.length*100);
+  const checkedIndices=[];
+  all.forEach((x, idx)=>{ if(x.checked) checkedIndices.push(idx); });
+  try{
+    localStorage.setItem("garden_prep_checklist", JSON.stringify(checkedIndices));
+  }catch(e){}
+  const p=Math.round(checkedIndices.length/all.length*100);
   $("prepBar").style.width=p+"%";
   $("prepText").textContent=p+"% complete";
-  track("donation_topic_click",{topic:"prep_checklist",progress:p});
+  if(fireEvent) track("donation_topic_click",{topic:"prep_checklist",progress:p});
 }
+
+function initPrep(){
+  try{
+    const saved=JSON.parse(localStorage.getItem("garden_prep_checklist")||"[]");
+    document.querySelectorAll(".prep").forEach((x, idx)=>{
+      if(saved.includes(idx)) x.checked=true;
+    });
+  }catch(e){}
+  updatePrep(false);
+}
+
+document.querySelectorAll(".prep").forEach(x=>x.addEventListener("change",()=>updatePrep(true)));
+initPrep();
 
 document.addEventListener("click",e=>{
   const a=e.target.closest("a[data-event]");

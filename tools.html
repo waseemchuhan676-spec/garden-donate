@@ -8,6 +8,7 @@
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#143d25">
 <link rel="canonical" href="https://gardendonate.online/tools.html">
+<link rel="preconnect" href="https://www.googletagmanager.com">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="apple-touch-icon" href="favicon.svg">
 
@@ -170,6 +171,7 @@ footer{background:#142d1f;color:#dcebdc;padding:45px 0}
   .tool-card{border:none;box-shadow:none;padding:0;max-width:100%}
   #receiptSection{display:block!important}
   #receiptPrintArea{display:block!important;padding:20px;border:2px solid #000;border-radius:8px}
+  .receipt-meta-box{display:grid!important;grid-template-columns:repeat(3,1fr)!important;background:#fff!important;border:1px solid #000!important;padding:12px!important;margin-bottom:16px!important}
 }
 </style>
 </head>
@@ -443,7 +445,7 @@ footer{background:#142d1f;color:#dcebdc;padding:45px 0}
 </div>
 </div>
 
-<div class="grid-2 hide-print" style="margin-bottom:16px">
+<div class="grid-3 hide-print" style="margin-bottom:16px">
 <div class="field">
 <label for="donorName">Donor Full Name</label>
 <input id="donorName" placeholder="e.g. John Doe" maxlength="60">
@@ -452,6 +454,17 @@ footer{background:#142d1f;color:#dcebdc;padding:45px 0}
 <label for="charityName">Recipient Charity / Organization</label>
 <input id="charityName" placeholder="e.g. Habitat ReStore / Goodwill" maxlength="80">
 </div>
+<div class="field">
+<label for="donationDate">Donation Date</label>
+<input id="donationDate" type="date">
+</div>
+</div>
+
+<!-- PRINT-VISIBLE DONOR & CHARITY RECORD SUMMARY -->
+<div class="receipt-meta-box" id="receiptMetaPrint" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;background:#fbfdfb;border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:16px">
+<div><span style="font-size:11px;text-transform:uppercase;color:var(--muted);font-weight:800;letter-spacing:.04em;display:block">Donor Name</span><div style="font-weight:800;font-size:15px;color:var(--dark)" id="printDonorName">—</div></div>
+<div><span style="font-size:11px;text-transform:uppercase;color:var(--muted);font-weight:800;letter-spacing:.04em;display:block">Recipient Charity / Organization</span><div style="font-weight:800;font-size:15px;color:var(--dark)" id="printCharityName">—</div></div>
+<div><span style="font-size:11px;text-transform:uppercase;color:var(--muted);font-weight:800;letter-spacing:.04em;display:block">Donation Date</span><div style="font-weight:800;font-size:15px;color:var(--dark)" id="printDonationDate">—</div></div>
 </div>
 
 <div class="hide-print" style="background:var(--soft);padding:18px;border-radius:12px;border:1px solid var(--line);margin-bottom:18px">
@@ -731,6 +744,34 @@ let receiptItems=[
   {name:"Craftsman Gas Push Lawn Mower",condition:"Good",value:65}
 ];
 
+function formatDisplayDate(dateStr){
+  if(!dateStr) return "Not Specified";
+  try{
+    const parts=dateStr.split("-");
+    if(parts.length===3){
+      const d=new Date(parseInt(parts[0]), parseInt(parts[1])-1, parseInt(parts[2]));
+      return d.toLocaleDateString("en-US",{year:"numeric",month:"long",day:"numeric"});
+    }
+  }catch(e){}
+  return dateStr;
+}
+
+function updateReceiptMeta(){
+  const donor=$("donorName").value.trim();
+  const charity=$("charityName").value.trim();
+  const dateVal=$("donationDate").value;
+
+  $("printDonorName").textContent=donor||"Not Specified";
+  $("printCharityName").textContent=charity||"Not Specified";
+  $("printDonationDate").textContent=formatDisplayDate(dateVal);
+
+  try{
+    localStorage.setItem("garden_receipt_donor", donor);
+    localStorage.setItem("garden_receipt_charity", charity);
+    localStorage.setItem("garden_receipt_date", dateVal);
+  }catch(e){}
+}
+
 function renderReceipt(){
   const tbody=$("receiptTbody");
   tbody.innerHTML="";
@@ -752,6 +793,9 @@ function renderReceipt(){
   });
 
   $("receiptTotal").textContent=`$${total.toFixed(2)}`;
+  try{
+    localStorage.setItem("garden_receipt_items", JSON.stringify(receiptItems));
+  }catch(e){}
 }
 
 function addReceiptItem(name,condition,value){
@@ -786,16 +830,42 @@ $("addItemBtn").addEventListener("click",()=>{
 });
 
 $("printReceiptBtn").addEventListener("click",()=>{
+  updateReceiptMeta();
   track("tool_interaction",{tool:"receipt_print"});
   window.print();
 });
+
+$("donorName").addEventListener("input",updateReceiptMeta);
+$("charityName").addEventListener("input",updateReceiptMeta);
+$("donationDate").addEventListener("change",updateReceiptMeta);
 
 function escapeHtml(s){
   return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
 }
 
-// Initial render
-renderReceipt();
+function initReceipt(){
+  try{
+    const saved=localStorage.getItem("garden_receipt_items");
+    if(saved){
+      const parsed=JSON.parse(saved);
+      if(Array.isArray(parsed)&&parsed.length>0) receiptItems=parsed;
+    }
+    const savedDonor=localStorage.getItem("garden_receipt_donor");
+    if(savedDonor) $("donorName").value=savedDonor;
+    const savedCharity=localStorage.getItem("garden_receipt_charity");
+    if(savedCharity) $("charityName").value=savedCharity;
+    const savedDate=localStorage.getItem("garden_receipt_date");
+    if(savedDate) $("donationDate").value=savedDate;
+    else {
+      const today=new Date().toISOString().split("T")[0];
+      $("donationDate").value=today;
+    }
+  }catch(e){}
+  updateReceiptMeta();
+  renderReceipt();
+}
+
+initReceipt();
 </script>
 </body>
 </html>
