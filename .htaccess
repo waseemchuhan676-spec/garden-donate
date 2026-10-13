@@ -7,6 +7,7 @@ RewriteEngine On
 
 # 1. Legacy & Consolidated 301 Permanent Redirects
 RewriteRule ^10-easy-places-to-donate\.html$ https://gardendonate.online/where-to-donate.html [R=301,L]
+RewriteRule ^articles/where-to-donate-old-garden-tools\.html$ https://gardendonate.online/articles/where-to-donate-used-gardening-tools.html [R=301,L]
 
 # 2. Enforce HTTPS and non-www (301 Permanent Redirect)
 # Redirects http:// and www.gardendonate.online to https://gardendonate.online
