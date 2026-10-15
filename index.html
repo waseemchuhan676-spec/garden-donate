@@ -10,7 +10,6 @@
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta name="theme-color" content="#143d25">
   <meta name="author" content="Garden Tool Donation Finder">
-  <meta name="monetag" content="8012103b7d21f2056b1fc41d8b593453">
   <link rel="canonical" href="https://gardendonate.online/">
   <link rel="preconnect" href="https://www.googletagmanager.com">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -40,11 +39,6 @@
     }
     gtag('js', new Date()); gtag('config', 'G-3V9ND28MWL');
   </script>
-
-  <!-- Adsterra Social Bar -->
-  <script data-cfasync="false" src="https://bauval.org/14/ee9e8ff9189ae4d1b68e6c88e3cb36fc"></script>
-  <!-- Monetag Ad Tag -->
-  <script src="https://quge5.com/88/tag.min.js" data-zone="293534" async data-cfasync="false"></script>
 
   <script type="application/ld+json">
 {
@@ -231,9 +225,8 @@
 
     header {
       background:
-        radial-gradient(circle at 85% 15%, rgba(46, 125, 75, 0.35) 0%, transparent 55%),
-        linear-gradient(135deg, rgba(13, 34, 21, 0.92) 0%, rgba(18, 51, 31, 0.88) 50%, rgba(22, 64, 38, 0.84) 100%),
-        url('hero-garden-tools.jpg') center 35% / cover no-repeat;
+        radial-gradient(circle at 85% 15%, rgba(46, 125, 75, 0.25) 0%, transparent 60%),
+        linear-gradient(180deg, #0b2214 0%, #143d25 60%, #18482c 100%);
       color: #fff;
       position: relative;
       border-bottom: 2px solid #236b3a;
@@ -277,7 +270,11 @@
       font-size: 22px;
       border-radius: 8px;
       padding: 6px 12px;
-      cursor: pointer
+      min-width: 44px;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
     }
 
     .mobile-nav {
@@ -308,32 +305,50 @@
     }
 
     .hero {
-      padding: 35px 0 45px
+      padding: 30px 0 45px;
+    }
+
+    .hero-content-box {
+      position: relative;
+      border-radius: 20px;
+      padding: 42px 36px 38px;
+      background:
+        linear-gradient(105deg, rgba(8, 26, 15, 0.88) 0%, rgba(12, 40, 23, 0.74) 45%, rgba(16, 52, 30, 0.40) 80%, rgba(9, 28, 16, 0.60) 100%),
+        url('hero-garden-tools.jpg') center right / cover no-repeat;
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.28);
+      border: 1px solid rgba(255, 255, 255, 0.20);
+      overflow: hidden;
+      margin-bottom: 18px;
     }
 
     .eyebrow {
       display: inline-block;
-      padding: 6px 11px;
-      border: 1px solid #ffffff44;
-      background: #ffffff14;
+      padding: 6px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      background: rgba(14, 46, 26, 0.65);
+      backdrop-filter: blur(8px);
       border-radius: 999px;
       font-size: 12px;
       font-weight: 800;
-      letter-spacing: .04em
+      letter-spacing: .05em;
+      color: #86efac;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
 
     .hero h1 {
-      font-size: clamp(34px, 5.5vw, 56px);
-      line-height: 1.08;
+      font-size: clamp(32px, 5.2vw, 54px);
+      line-height: 1.1;
       max-width: 900px;
-      margin: 14px 0
+      margin: 14px 0;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
     }
 
-    .hero p {
+    .hero-subheading {
       font-size: 18px;
       max-width: 820px;
-      color: #e8f5ea;
-      margin: 0 0 16px
+      color: #f0faf2;
+      margin: 0 0 16px;
+      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
     }
 
     .last-reviewed {
@@ -579,10 +594,11 @@
 
     .table-wrap {
       overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
       background: var(--card);
       border-radius: 14px;
       border: 1px solid var(--line);
-      box-shadow: var(--shadow)
+      box-shadow: var(--shadow);
     }
 
     .table-wrap table {
@@ -628,9 +644,18 @@
 
     .prep-row {
       display: flex;
-      gap: 10px;
+      gap: 12px;
       align-items: flex-start;
-      padding: 10px 0
+      padding: 10px 0;
+    }
+
+    .prep-row input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      margin-top: 2px;
+      flex-shrink: 0;
+      accent-color: var(--g);
+      cursor: pointer;
     }
 
     .content {
@@ -754,43 +779,29 @@
 
     @media(max-width:520px) {
       .wrap {
-        padding: 0 15px
+        padding: 0 15px;
+      }
+
+      .brand {
+        font-size: 16px;
+        line-height: 1.25;
       }
 
       .actions .btn {
-        width: 100%
+        width: 100%;
       }
 
       .hero h1 {
-        font-size: 35px
-      }
-
-      .hero p {
-        font-size: 17px
+        font-size: clamp(26px, 7.5vw, 32px);
       }
 
       .direct-answer {
-        padding: 18px
+        padding: 18px;
       }
 
       .finder {
-        border-radius: 14px
+        border-radius: 14px;
       }
-    }
-
-    /* CRO HERO SECTION (ABOVE-THE-FOLD TRUST & INSTANT CLARITY) */
-    .hero-content-box {
-      max-width: 960px;
-      margin: 0 0 10px;
-    }
-
-    .hero-subheading {
-      font-size: 19px;
-      line-height: 1.55;
-      color: #e8f5ea;
-      max-width: 860px;
-      margin: 10px 0 22px;
-      font-weight: 400;
     }
 
     .hero-search-wrapper {
@@ -946,18 +957,65 @@
     }
 
     @media (max-width: 680px) {
+      .hero-content-box {
+        padding: 24px 16px 20px;
+        border-radius: 14px;
+        background:
+          linear-gradient(180deg, rgba(8, 26, 15, 0.90) 0%, rgba(12, 40, 23, 0.78) 50%, rgba(9, 28, 16, 0.88) 100%),
+          url('hero-garden-tools.jpg') center top / cover no-repeat;
+      }
+      .eyebrow {
+        font-size: 11px;
+        padding: 4px 10px;
+        max-width: 100%;
+        text-align: center;
+      }
+      .hero-subheading {
+        font-size: 15.5px;
+        line-height: 1.5;
+        margin: 8px 0 16px;
+      }
+      .hero-search-wrapper {
+        padding: 14px 12px;
+        border-radius: 14px;
+        margin: 12px 0 10px;
+      }
       .hero-search-form {
         flex-direction: column;
-        padding: 10px;
+        padding: 8px;
         align-items: stretch;
       }
       .hero-cta-btn {
         width: 100%;
       }
+      .pills-title {
+        width: 100%;
+        margin-bottom: 2px;
+      }
+      .hero-pill {
+        padding: 6px 12px;
+        font-size: 12.5px;
+        min-height: 38px;
+      }
       .hero-proof-badges {
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
+      }
+      .proof-badge {
+        font-size: 12px;
+        gap: 6px;
+      }
+      .btn-link {
+        display: flex;
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        min-height: 46px;
+        align-items: center;
+        font-size: 15px;
+        margin-top: 10px;
+        box-sizing: border-box;
       }
     }
 
@@ -1101,6 +1159,8 @@
       border: 1px solid #e2e8f0;
       position: relative;
       text-align: center;
+      max-height: 90vh;
+      overflow-y: auto;
     }
 
     .cro-modal-close-btn {
@@ -1164,7 +1224,7 @@
       padding: 12px 14px;
       border: 1.5px solid #cbd5e1;
       border-radius: 10px;
-      font-size: 15px;
+      font-size: 16px;
       min-height: 48px;
       box-sizing: border-box;
     }
@@ -1408,14 +1468,6 @@
   </header>
 
   <main>
-
-    <!-- Adsterra Native Banner -->
-    <div class="wrap" style="margin:24px auto 0;text-align:center">
-      <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px">
-        Advertisement</div>
-      <script async="async" data-cfasync="false" src="https://bauval.org/21/a9f8e5fbbbe13f71d864f1b981ab2c7f"></script>
-      <div id="container-a9f8e5fbbbe13f71d864f1b981ab2c7f"></div>
-    </div>
 
     <!-- 4. 10 PLACES THAT MAY ACCEPT GARDEN TOOL DONATIONS -->
     <section id="where">
