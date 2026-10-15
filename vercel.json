@@ -1,0 +1,49 @@
+{
+  "cleanUrls": false,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/10-easy-places-to-donate.html",
+      "destination": "/where-to-donate.html",
+      "permanent": true
+    },
+    {
+      "source": "/articles/where-to-donate-old-garden-tools.html",
+      "destination": "/where-to-donate.html",
+      "permanent": true
+    },
+    {
+      "source": "/articles/where-to-donate-used-gardening-tools.html",
+      "destination": "/where-to-donate.html",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(jpg|jpeg|png|svg|webp|ico)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}
