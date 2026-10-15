@@ -157,8 +157,16 @@ a{color:var(--g);font-weight:700}
 button,input,select{font:inherit}
 button{cursor:pointer}
 .wrap{max-width:1180px;margin:auto;padding:0 20px}
-header{background:linear-gradient(135deg,#143d25,#2f7b45);color:#fff}
-.top{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 0}
+header{
+  background:
+    radial-gradient(circle at 85% 15%, rgba(46, 125, 75, 0.35) 0%, transparent 55%),
+    linear-gradient(135deg, rgba(13, 34, 21, 0.92) 0%, rgba(18, 51, 31, 0.88) 50%, rgba(22, 64, 38, 0.84) 100%),
+    url('../hero-garden-tools.jpg') center 35% / cover no-repeat;
+  color:#fff;
+  position:relative;
+  border-bottom:2px solid #236b3a;
+}
+.top{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.14)}
 .brand{font-weight:900;font-size:19px;color:#fff;text-decoration:none;display:flex;align-items:center;gap:8px}
 .nav{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
 .nav a{color:#e9f7ec;text-decoration:none;font-size:14px;font-weight:700;padding:6px 12px;border-radius:8px;transition:background .2s}
@@ -226,6 +234,574 @@ footer{background:#142d1f;color:#dcebdc;padding:45px 0}
 @media(max-width:550px){
   .footer-grid{grid-template-columns:1fr}
 }
+
+/* ==========================================================================
+   TASK 3: QUICK ANSWER BOX (CRO INSTANT CLARITY)
+   ========================================================================== */
+.quick-answer-card-cro {
+  background: #ffffff;
+  color: #1e293b;
+  border-radius: 16px;
+  padding: 24px;
+  margin: 18px 0 22px;
+  border: 2px solid #bbf7d0;
+  border-left: 6px solid #15803d;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+}
+
+.qac-summary {
+  font-size: 16px;
+  line-height: 1.55;
+  color: #1e293b;
+  margin: 0 0 16px;
+}
+
+.qac-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.qac-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f0fdf4;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.qac-badge-icon {
+  width: 15px;
+  height: 15px;
+  color: #15803d;
+  flex-shrink: 0;
+}
+
+.qac-readtime {
+  font-size: 13px;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.qac-headline {
+  font-size: clamp(20px, 3.2vw, 25px);
+  line-height: 1.25;
+  color: #163022;
+  margin: 0 0 16px;
+  font-weight: 900;
+}
+
+.qac-subhead {
+  color: #15803d;
+  font-weight: 700;
+}
+
+.qac-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.qac-check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.qac-check-item.item-pass {
+  background: #f0fdf4;
+  border: 1px solid #dcfce7;
+}
+
+.qac-check-item.item-fail {
+  background: #fef2f2;
+  border: 1px solid #fee2e2;
+}
+
+.qac-icon-symbol {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #fff;
+  font-weight: 900;
+  font-size: 13px;
+}
+
+.qac-icon-symbol.check-pass {
+  background: #15803d;
+}
+
+.qac-icon-symbol.check-fail {
+  background: #dc2626;
+}
+
+.qac-item-text {
+  color: #1e293b;
+}
+
+.qac-item-text strong {
+  color: #0f172a;
+}
+
+.qac-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-top: 6px;
+}
+
+.qac-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 800;
+  padding: 12px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+  min-height: 48px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.qac-btn-primary {
+  background: #15803d;
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 12px rgba(21, 128, 61, 0.28);
+}
+
+.qac-btn-primary:hover {
+  background: #166534;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(21, 128, 61, 0.38);
+  color: #ffffff;
+}
+
+.qac-btn-outline {
+  background: #ffffff;
+  color: #15803d;
+  border: 2px solid #bbf7d0;
+}
+
+.qac-btn-outline:hover {
+  background: #f0fdf4;
+  border-color: #15803d;
+  color: #166534;
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   TASK 3: VISUAL RECOMMENDATION & CROSS-SELL CARD
+   ========================================================================== */
+.alt-pathway-card {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+  border: 2px solid #bbf7d0;
+  border-radius: 16px;
+  padding: 24px;
+  margin: 36px 0;
+  box-shadow: 0 10px 28px rgba(21, 128, 61, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.alt-pathway-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: #15803d;
+}
+
+.apc-top-bar {
+  margin-bottom: 12px;
+}
+
+.apc-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #dcfce7;
+  color: #15803d;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid #86efac;
+}
+
+.apc-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #15803d;
+  display: inline-block;
+  box-shadow: 0 0 0 2px rgba(21, 128, 61, 0.2);
+}
+
+.apc-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.apc-icon-col {
+  flex-shrink: 0;
+}
+
+.apc-icon-badge {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #15803d;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 14px rgba(21, 128, 61, 0.25);
+}
+
+.apc-svg-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.apc-content-col {
+  flex: 1;
+}
+
+.apc-heading {
+  font-size: 21px;
+  color: #163022;
+  margin: 0 0 8px;
+  font-weight: 800;
+}
+
+.apc-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #334155;
+  margin: 0 0 16px;
+}
+
+.apc-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #15803d;
+  color: #ffffff;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 15px;
+  text-decoration: none;
+  min-height: 48px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(21, 128, 61, 0.25);
+}
+
+.apc-cta-btn:hover {
+  background: #166534;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(21, 128, 61, 0.35);
+  color: #ffffff;
+}
+
+.apc-arrow {
+  display: inline-block;
+  transition: transform 0.25s ease;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.apc-cta-btn:hover .apc-arrow {
+  transform: translateX(5px);
+}
+
+@media (max-width: 640px) {
+  .qac-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .qac-btn {
+    width: 100%;
+  }
+  .apc-body {
+    flex-direction: column;
+  }
+  .apc-cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   TASK 1: CRO MODALS & NON-BLOCKING COOKIE CONSENT BAR
+   ========================================================================== */
+.cookie-consent-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #0f172a;
+  color: #f8fafc;
+  z-index: 9990;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.15);
+  border-top: 1px solid #334155;
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+}
+
+.cookie-consent-bar[hidden] {
+  display: none !important;
+}
+
+.ccb-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 6px 16px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ccb-text {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.35;
+  color: #cbd5e1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ccb-link {
+  color: #86efac;
+  text-decoration: underline;
+  margin-left: 4px;
+}
+
+.ccb-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.ccb-accept-btn {
+  background: #15803d;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  min-height: 38px;
+  min-width: 44px;
+  transition: background 0.15s;
+}
+
+.ccb-accept-btn:hover {
+  background: #166534;
+}
+
+.ccb-close-btn {
+  background: transparent;
+  color: #94a3b8;
+  border: none;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}
+
+.ccb-close-btn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 600px) {
+  .cookie-consent-bar {
+    max-height: 60px;
+  }
+  .ccb-text {
+    font-size: 11.5px;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 1.25;
+  }
+  .ccb-container {
+    padding: 4px 12px;
+  }
+}
+
+.cro-promo-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: croFadeIn 0.25s ease-out;
+}
+
+.cro-promo-modal-backdrop[hidden] {
+  display: none !important;
+}
+
+.cro-promo-modal-dialog {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 28px 24px;
+  max-width: 460px;
+  width: 100%;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: 1px solid #e2e8f0;
+  position: relative;
+  text-align: center;
+}
+
+.cro-modal-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f5f9;
+  border: none;
+  border-radius: 50%;
+  font-size: 22px;
+  color: #475569;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.cro-modal-close-btn:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.cro-modal-badge {
+  display: inline-block;
+  background: #f0fdf4;
+  color: #15803d;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid #bbf7d0;
+  margin-bottom: 12px;
+}
+
+.cro-modal-title {
+  font-size: 21px;
+  font-weight: 900;
+  color: #163022;
+  margin: 0 0 8px;
+  line-height: 1.3;
+}
+
+.cro-modal-desc {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.55;
+  margin: 0 0 16px;
+}
+
+.cro-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cro-modal-input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 15px;
+  min-height: 48px;
+  box-sizing: border-box;
+}
+
+.cro-modal-input:focus {
+  outline: none;
+  border-color: #15803d;
+  box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.15);
+}
+
+.cro-modal-submit-btn {
+  background: #15803d;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  min-height: 48px;
+  transition: background 0.15s;
+}
+
+.cro-modal-submit-btn:hover {
+  background: #166534;
+}
+
+.cro-modal-note {
+  display: block;
+  font-size: 11px;
+  color: #94a3b8;
+  margin-top: 10px;
+}
+
+@keyframes croFadeIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
 </style>
 <!-- Microsoft Clarity -->
 <script type="text/javascript">
@@ -269,6 +845,51 @@ footer{background:#142d1f;color:#dcebdc;padding:45px 0}
 </div>
 <span class="eyebrow">POWER EQUIPMENT GUIDANCE</span>
 <h1>Where to Donate a Lawn Mower: Local Options & Tips</h1>
+
+<!-- TASK 3: QUICK ANSWER BOX (DIRECTLY BELOW H1 FOR 5-SECOND ANSWER) -->
+<div class="quick-answer-card-cro" id="quick-verdict" role="region" aria-label="Quick Verdict and Acceptance Rules">
+  <div class="qac-top">
+    <span class="qac-badge">
+      <svg viewBox="0 0 20 20" fill="currentColor" class="qac-badge-icon" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+      Quick Verdict &amp; Acceptance Rules
+    </span>
+    <span class="qac-readtime">⚡ 5-Second Direct Answer</span>
+  </div>
+
+  <p class="qac-summary"><strong>Yes, Goodwill accepts lawn mowers</strong>, but intake depends on branch policy and strict safety standards:</p>
+
+  <ul class="qac-checklist">
+    <li class="qac-check-item item-pass">
+      <span class="qac-icon-symbol check-pass" aria-hidden="true">✓</span>
+      <div class="qac-item-text">
+        <strong>Fuel &amp; Oil 100% Drained:</strong> Must be completely empty with zero fuel odor.
+      </div>
+    </li>
+    <li class="qac-check-item item-pass">
+      <span class="qac-icon-symbol check-pass" aria-hidden="true">✓</span>
+      <div class="qac-item-text">
+        <strong>Accessories Included:</strong> Battery models must include functioning charger and battery.
+      </div>
+    </li>
+    <li class="qac-check-item item-fail">
+      <span class="qac-icon-symbol check-fail" aria-hidden="true">✕</span>
+      <div class="qac-item-text">
+        <strong>Non-Running Units Rejected:</strong> Broken, seized, or rusty units will be rejected at drop-off.
+      </div>
+    </li>
+  </ul>
+
+  <div class="qac-actions">
+    <a href="#does-goodwill-accept-lawnmowers" class="qac-btn qac-btn-primary">
+      <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+      Find Local Branch Rules &amp; Phone
+    </a>
+    <a href="#habitat-restore-rules" class="qac-btn qac-btn-outline">
+      Habitat ReStore vs. Goodwill Rules →
+    </a>
+  </div>
+</div>
+
 <p>Practical options for donating working, electric, battery, or repairable lawn mowers safely to community programs, non-profits, and vocational schools.</p>
 <div class="meta-info">
 <span>Published: September 2026</span>
@@ -312,7 +933,7 @@ footer{background:#142d1f;color:#dcebdc;padding:45px 0}
 
 <h2>Organizations That May Accept Lawn Mower Donations</h2>
 
-<div class="org-card">
+<div class="org-card" id="habitat-restore-rules">
 <span class="badge">BUILDING & HARDWARE REUSE</span>
 <h4>1. Habitat for Humanity ReStore</h4>
 <p>Habitat ReStores are non-profit home improvement outlets that sell donated building materials, appliances, and outdoor maintenance equipment to the public. Funds generated support local affordable home construction.</p>
@@ -433,6 +1054,38 @@ footer{background:#142d1f;color:#dcebdc;padding:45px 0}
 <span class="badge">DIRECT COMMUNITY GIVING</span>
 <h4>6. Local Mutual Aid & Buy-Nothing Networks</h4>
 <p>If you prefer an immediate handoff without navigating charity intake bays, neighborhood gifting groups (such as Freecycle or local Buy-Nothing groups) connect you directly with nearby homeowners or community volunteers who will gladly pick up the mower from your driveway.</p>
+</div>
+
+<!-- TASK 3: VISUAL RECOMMENDATION & CROSS-SELL CARD -->
+<div class="alt-pathway-card" role="complementary" aria-label="Alternative Pathway for Broken Equipment">
+  <div class="apc-top-bar">
+    <span class="apc-tag">
+      <span class="apc-pulse" aria-hidden="true"></span>
+      Alternative Pathway
+    </span>
+  </div>
+  <div class="apc-body">
+    <div class="apc-icon-col" aria-hidden="true">
+      <div class="apc-icon-badge">
+        <svg class="apc-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="6" cy="19" r="3"></circle>
+          <circle cx="18" cy="19" r="3"></circle>
+          <path d="M9 19h6"></path>
+          <path d="M6 16V9a3 3 0 0 1 3-3h5a3 3 0 0 1 3 3v7"></path>
+          <path d="M14 6l3-3h4"></path>
+          <path d="M9 10h6"></path>
+        </svg>
+      </div>
+    </div>
+    <div class="apc-content-col">
+      <h3 class="apc-heading">Have a broken or seized lawnmower?</h3>
+      <p class="apc-desc">Goodwill will reject non-running equipment. Check local vocational schools, scrap metal drop-offs, and free pickup programs instead.</p>
+      <a href="can-you-donate-broken-garden-tools.html" class="apc-cta-btn">
+        <span>Read Guide: Where to Donate Broken Garden Tools</span>
+        <span class="apc-arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
 </div>
 
 <div class="cta-box">
@@ -583,6 +1236,123 @@ if(menuBtn&&mobileNav){
     mobileNav.style.display=open?"none":"flex";
   });
 }
+
+// ==========================================================================
+// TASK 1: FIX MODALS / POP-UPS & CONSENT BANNER (CRO FRICTION FIX)
+// ==========================================================================
+(function initCROFrictionFix() {
+  const CONSENT_KEY = "gd_cookie_consent_v1";
+  const PROMO_KEY = "gd_promo_dismissed_time";
+  const FOURTEEN_DAYS_MS = 14 * 24 * 60 * 60 * 1000;
+
+  // 1. Slim Non-Blocking Sticky Bottom Cookie Bar
+  const consentBar = document.getElementById("cookieConsentBar");
+  const acceptBtn = document.getElementById("acceptCookiesBtn");
+  const closeCookieBtn = document.getElementById("closeCookieBarBtn");
+
+  if (consentBar) {
+    const isConsentGiven = localStorage.getItem(CONSENT_KEY);
+    if (!isConsentGiven) {
+      consentBar.removeAttribute("hidden");
+    }
+    const dismissConsent = () => {
+      try { localStorage.setItem(CONSENT_KEY, "accepted"); } catch (e) { }
+      consentBar.setAttribute("hidden", "true");
+    };
+    if (acceptBtn) acceptBtn.addEventListener("click", dismissConsent);
+    if (closeCookieBtn) closeCookieBtn.addEventListener("click", dismissConsent);
+  }
+
+  // 2. CRO Promo Modal (Strictly Suppressed on Load)
+  const promoModal = document.getElementById("croPromoModal");
+  const closePromoBtn = document.getElementById("closePromoModalBtn");
+
+  if (promoModal) {
+    let lastDismissed = null;
+    try { lastDismissed = localStorage.getItem(PROMO_KEY); } catch (e) { }
+    const now = Date.now();
+
+    // If closed within last 14 days, suppress completely
+    if (lastDismissed && (now - parseInt(lastDismissed, 10)) < FOURTEEN_DAYS_MS) {
+      return;
+    }
+
+    let modalShown = false;
+    const showModal = () => {
+      if (modalShown) return;
+      // Security / UX Lock: Never trigger popup within the first 10 seconds
+      if (performance.now() < 10000) return;
+      modalShown = true;
+      promoModal.removeAttribute("hidden");
+    };
+
+    window.__dismissPromoModal = function (submitted = false) {
+      try { localStorage.setItem(PROMO_KEY, Date.now().toString()); } catch (e) { }
+      promoModal.setAttribute("hidden", "true");
+      if (submitted) {
+        alert("Thank you! Your donation preparation checklist will be sent shortly.");
+      }
+    };
+
+    if (closePromoBtn) {
+      closePromoBtn.addEventListener("click", () => window.__dismissPromoModal(false));
+    }
+    promoModal.addEventListener("click", (e) => {
+      if (e.target === promoModal) window.__dismissPromoModal(false);
+    });
+
+    // Trigger condition a: Time on page >= 45 seconds
+    setTimeout(() => {
+      if (!modalShown) showModal();
+    }, 45000);
+
+    // Trigger condition b: User scroll depth >= 60%
+    const checkScrollDepth = () => {
+      if (modalShown) return;
+      const docEl = document.documentElement;
+      const docBody = document.body;
+      const st = "scrollTop" in docEl ? docEl.scrollTop : docBody.scrollTop;
+      const sh = "scrollHeight" in docEl ? docEl.scrollHeight : docBody.scrollHeight;
+      const ch = docEl.clientHeight;
+      const scrollPercent = (st / (sh - ch)) * 100;
+
+      if (scrollPercent >= 60) {
+        showModal();
+        window.removeEventListener("scroll", checkScrollDepth);
+      }
+    };
+    window.addEventListener("scroll", checkScrollDepth, { passive: true });
+  }
+})();
 </script>
+
+<!-- TASK 1: SLIM NON-BLOCKING COOKIE CONSENT BAR (MAX 60PX MOBILE, NON-BLOCKING) -->
+<aside id="cookieConsentBar" class="cookie-consent-bar" role="region" aria-label="Privacy and Cookie Consent" hidden>
+  <div class="ccb-container">
+    <p class="ccb-text">
+      We use essential cookies &amp; anonymous metrics to improve tool donation finder accuracy.
+      <a href="../privacy-policy.html" class="ccb-link">Privacy Policy</a>
+    </p>
+    <div class="ccb-actions">
+      <button type="button" id="acceptCookiesBtn" class="ccb-accept-btn" aria-label="Accept cookies and dismiss">Got it</button>
+      <button type="button" id="closeCookieBarBtn" class="ccb-close-btn" aria-label="Close cookie banner">&times;</button>
+    </div>
+  </div>
+</aside>
+
+<!-- TASK 1: PROMO / NEWSLETTER MODAL (SUPPRESSED ON LOAD, TRIGGERS AT >=60% SCROLL OR >=45S) -->
+<div id="croPromoModal" class="cro-promo-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="promoModalTitle" hidden>
+  <div class="cro-promo-modal-dialog">
+    <button type="button" id="closePromoModalBtn" class="cro-modal-close-btn" aria-label="Close promotional modal">&times;</button>
+    <div class="cro-modal-badge">🌱 Free 2026 Checklist</div>
+    <h3 id="promoModalTitle" class="cro-modal-title">Where to Donate Tools Without Rejection</h3>
+    <p class="cro-modal-desc">Get our printable 1-page donation checklist &amp; charity intake guidelines sent straight to your inbox.</p>
+    <form id="promoModalForm" class="cro-modal-form" onsubmit="event.preventDefault(); window.__dismissPromoModal(true);">
+      <input type="email" class="cro-modal-input" placeholder="Enter your email address..." required aria-label="Email address">
+      <button type="submit" class="cro-modal-submit-btn">Get Free Guide</button>
+    </form>
+    <span class="cro-modal-note">No spam ever. 100% free public guide. Unsubscribe anytime.</span>
+  </div>
+</div>
 </body>
 </html>
