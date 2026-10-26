@@ -3,6 +3,17 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.gardendonate.online"
+        }
+      ],
+      "destination": "https://gardendonate.online/:path*",
+      "permanent": true
+    },
+    {
       "source": "/10-easy-places-to-donate.html",
       "destination": "/where-to-donate.html",
       "permanent": true
