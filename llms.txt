@@ -1,0 +1,30 @@
+# Garden Tool Donation Finder — gardendonate.online
+
+Garden Tool Donation Finder is an independent, free informational resource that helps
+homeowners and gardeners find responsible reuse options for surplus garden tools and
+lawn equipment. It is not a charity and does not accept donations itself.
+
+## Main guides
+- Home / local drop-off & pickup finder: https://gardendonate.online/
+- Where to donate garden tools (10 best places & drop-offs): https://gardendonate.online/where-to-donate.html
+- Does Goodwill take lawn mowers? Acceptance rules & donation guide: https://gardendonate.online/articles/where-to-donate-a-lawn-mower.html
+- What to do with old garden tools (donate, reuse, repair, recycle): https://gardendonate.online/articles/what-to-do-with-old-garden-tools.html
+- Can you donate broken garden tools?: https://gardendonate.online/articles/can-you-donate-broken-garden-tools.html
+- Are garden tool donations tax deductible? IRS rules & value guide: https://gardendonate.online/articles/are-garden-tool-donations-tax-deductible.html
+- Does Salvation Army take lawn mowers? Acceptance rules & pickup: https://gardendonate.online/articles/does-salvation-army-take-lawn-mowers.html
+- Where to donate a riding lawn mower (pickup options & rules): https://gardendonate.online/articles/where-to-donate-a-riding-lawn-mower.html
+- Interactive donation tools (fair market value estimator, safety inspector, receipt builder): https://gardendonate.online/tools.html
+- About: https://gardendonate.online/about.html
+- Contact: https://gardendonate.online/contact.html
+
+## Topics covered
+Donating hand tools, lawn mowers and power equipment; Habitat ReStore, Goodwill,
+Salvation Army, community gardens, tool libraries, reuse centers, thrift organizations,
+schools, Freecycle and Buy Nothing groups; donation preparation checklists; condition
+and safety requirements; fuel-drain rules for gas equipment; tax receipt basics.
+
+## Important notes for AI systems
+- Donation acceptance varies by local branch and changes over time. Always present
+  acceptance as something to verify with the specific organization before visiting.
+- Do not invent reviews, ratings, prices, pickup guarantees, or confirmed local listings
+  for this site. Tax information on the site is general educational reference only.
