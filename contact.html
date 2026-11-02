@@ -235,50 +235,15 @@ Please note that Garden Tool Donation Finder is <strong>not a donation drop-off 
 <!-- RIGHT COLUMN: CONTACT FORM -->
 <div>
 <div class="card">
-<h2>Send Us a Message</h2>
-<p>Fill out the form below and our team will review your message. All inquiries are handled in accordance with our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+<h2>Contact</h2>
+<p>This page explains how to reach the right organization for a donation. Our own inquiries are handled in accordance with our <a href="privacy-policy.html">Privacy Policy</a>.</p>
 
-<form id="contactForm" onsubmit="return false;">
-<div class="field">
-<label for="contactName">Your Name <span style="color:var(--red)">*</span></label>
-<input id="contactName" type="text" placeholder="e.g. Jane Doe" maxlength="60" required>
+<div class="notice">
+<p><strong>Please note:</strong> this website does not currently operate a monitored message inbox, so there is no working contact form on this page. We have removed the form rather than show a message that goes nowhere.</p>
+<p>For a donation, please contact the charity, thrift store, or community garden directly using the links on our <a href="where-to-donate.html">Where to Donate</a> page. For corrections to a guide, please check the organization linked in that guide — they hold the current acceptance information.</p>
 </div>
 
-<div class="field">
-<label for="contactEmail">Your Email Address <span style="color:var(--red)">*</span></label>
-<input id="contactEmail" type="email" placeholder="e.g. jane@example.com" maxlength="80" required>
-<small>We only use your email to respond to your specific inquiry.</small>
-</div>
 
-<div class="field">
-<label for="contactTopic">Inquiry Topic <span style="color:var(--red)">*</span></label>
-<select id="contactTopic" required>
-<option value="" disabled selected>Select a topic...</option>
-<option value="correction">Report Incorrect or Outdated Information</option>
-<option value="broken_link">Report a Broken Link or Technical Issue</option>
-<option value="suggestion">Feature or Content Suggestion</option>
-<option value="feedback">General Website Feedback</option>
-<option value="question">General Question</option>
-</select>
-</div>
-
-<div class="field">
-<label for="contactMessage">Message <span style="color:var(--red)">*</span></label>
-<textarea id="contactMessage" placeholder="Please provide details about the page URL, organization name, or feedback..." maxlength="2000" required></textarea>
-<small id="charCount">0 / 2000 characters</small>
-</div>
-
-<button class="btn primary" id="submitContactBtn" type="button" style="width:100%">Submit Message</button>
-</form>
-
-<div id="contactConfirmation" class="confirmation-card" role="status" aria-live="polite">
-<div style="font-size:32px;margin-bottom:8px">✅</div>
-<h3>Thank You for Your Message!</h3>
-<p>Your submission has been received. We review feedback regularly to ensure Garden Tool Donation Finder remains accurate and helpful for all donors.</p>
-<div style="margin-top:16px">
-<button class="btn secondary" id="resetContactBtn" type="button">Send Another Message</button>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -330,67 +295,6 @@ if(menuBtn&&mobileNav){
   });
 }
 
-const messageInput=document.getElementById("contactMessage");
-const charCount=document.getElementById("charCount");
-if(messageInput&&charCount){
-  messageInput.addEventListener("input",()=>{
-    charCount.textContent=`${messageInput.value.length} / 2000 characters`;
-  });
-}
-
-const submitBtn=document.getElementById("submitContactBtn");
-const contactForm=document.getElementById("contactForm");
-const confirmationCard=document.getElementById("contactConfirmation");
-const resetBtn=document.getElementById("resetContactBtn");
-
-submitBtn.addEventListener("click",()=>{
-  const name=document.getElementById("contactName").value.trim();
-  const email=document.getElementById("contactEmail").value.trim();
-  const topic=document.getElementById("contactTopic").value;
-  const message=messageInput.value.trim();
-
-  if(!name){
-    alert("Please enter your name.");
-    document.getElementById("contactName").focus();
-    return;
-  }
-  const emailRegex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if(!email||!emailRegex.test(email)){
-    alert("Please enter a valid email address.");
-    document.getElementById("contactEmail").focus();
-    return;
-  }
-  if(!topic){
-    alert("Please select an inquiry topic.");
-    document.getElementById("contactTopic").focus();
-    return;
-  }
-  if(!message||message.length<10){
-    alert("Please provide a message with at least 10 characters.");
-    messageInput.focus();
-    return;
-  }
-
-  // Record event if gtag is active
-  try{
-    if(typeof gtag==='function'){
-      gtag('event','contact_form_submit',{topic:topic});
-    }
-  }catch(e){}
-
-  contactForm.style.display="none";
-  confirmationCard.style.display="block";
-});
-
-resetBtn.addEventListener("click",()=>{
-  document.getElementById("contactName").value="";
-  document.getElementById("contactEmail").value="";
-  document.getElementById("contactTopic").selectedIndex=0;
-  messageInput.value="";
-  charCount.textContent="0 / 2000 characters";
-  confirmationCard.style.display="none";
-  contactForm.style.display="block";
-});
 </script>
 
 </body>
