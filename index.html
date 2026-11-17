@@ -1489,9 +1489,6 @@
 
   <main>
 
-    <!-- Adsterra Native Banner & Sponsored Partner Link -->
-    <div class="wrap" style="margin:24px auto 0">
-    </div>
 
     <!-- 4. 10 PLACES THAT MAY ACCEPT GARDEN TOOL DONATIONS -->
     <section id="where">
@@ -2305,12 +2302,9 @@
           promoModal.removeAttribute("hidden");
         };
 
-        window.__dismissPromoModal = function (submitted = false) {
+        window.__dismissPromoModal = function () {
           try { localStorage.setItem(PROMO_KEY, Date.now().toString()); } catch (e) { }
           promoModal.setAttribute("hidden", "true");
-          if (submitted) {
-            alert("Thank you! Your donation preparation checklist will be sent shortly.");
-          }
         };
 
         if (closePromoBtn) {
@@ -2365,12 +2359,11 @@
       <button type="button" id="closePromoModalBtn" class="cro-modal-close-btn" aria-label="Close promotional modal">&times;</button>
       <div class="cro-modal-badge">🌱 Free 2026 Checklist</div>
       <h3 id="promoModalTitle" class="cro-modal-title">Where to Donate Tools Without Rejection</h3>
-      <p class="cro-modal-desc">Get our printable 1-page donation checklist &amp; charity intake guidelines sent straight to your inbox.</p>
-      <form id="promoModalForm" class="cro-modal-form" onsubmit="event.preventDefault(); window.__dismissPromoModal(true);">
-        <input type="email" class="cro-modal-input" placeholder="Enter your email address..." required aria-label="Email address">
-        <button type="submit" class="cro-modal-submit-btn">Get Free Guide</button>
-      </form>
-      <span class="cro-modal-note">No spam ever. 100% free public guide. Unsubscribe anytime.</span>
+      <p class="cro-modal-desc">View our free 1-page donation checklist &amp; charity intake guidelines right here on this site — no email needed.</p>
+      <div class="cro-modal-form">
+        <a href="tools.html#safety-checklist" class="cro-modal-submit-btn" style="display:block;text-align:center;text-decoration:none;box-sizing:border-box">View the Free Checklist</a>
+      </div>
+      <span class="cro-modal-note">100% free public guide. No email needed.</span>
     </div>
   </div>
 

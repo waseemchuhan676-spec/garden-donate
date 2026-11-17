@@ -910,9 +910,9 @@ footer{background:#142d1f;color:#dcebdc;padding:45px 0}
 </div>
 <p style="margin:0 0 10px;font-size:15px;color:#24332a"><strong>A working riding mower can be donated, but your best options are organizations with trucks, not ordinary drop-off stores:</strong></p>
 <ul style="margin:0 0 14px;padding-left:20px;font-size:15px;line-height:1.7">
-<li><strong>Habitat for Humanity ReStore:</strong> <span style="color:#236b3a;font-weight:700">Often the best fit</span> — many ReStores accept working riders and some offer pickup for large items or multi-item donations.</li>
-<li><strong>The Salvation Army:</strong> <span style="color:#236b3a;font-weight:700">Strong option where available</span> — truck pickup in select ZIP codes via satruck.org; see our <a href="does-salvation-army-take-lawn-mowers.html">Salvation Army lawn mower guide</a>.</li>
-<li><strong>Goodwill:</strong> <span style="color:#9a5b14;font-weight:700">Varies widely</span> — many stores are drop-off only and cannot receive riders; verify before traveling.</li>
+<li><strong><a href="https://www.habitat.org/restores/donate-goods" target="_blank" rel="noopener noreferrer">Habitat for Humanity ReStore</a>:</strong> <span style="color:#236b3a;font-weight:700">Often the best fit</span> — many ReStores accept working riders and some offer pickup for large items or multi-item donations.</li>
+<li><strong><a href="https://satruck.org/" target="_blank" rel="noopener noreferrer">The Salvation Army</a>:</strong> <span style="color:#236b3a;font-weight:700">Strong option where available</span> — truck pickup in select ZIP codes via satruck.org; see our <a href="does-salvation-army-take-lawn-mowers.html">Salvation Army lawn mower guide</a>.</li>
+<li><strong><a href="https://www.goodwill.org/donate/" target="_blank" rel="noopener noreferrer">Goodwill</a>:</strong> <span style="color:#9a5b14;font-weight:700">Varies widely</span> — many stores are drop-off only and cannot receive riders; verify before traveling.</li>
 <li><strong>Vocational programs:</strong> <span style="color:#236b3a;font-weight:700">Best for non-running riders</span> — schools and repair clinics use them as training projects.</li>
 <li><strong>Non-running or unsafe riders:</strong> <span style="color:#a33b32;font-weight:700">Scrap recycling</span> is the responsible last resort after fluids are drained.</li>
 </ul>
@@ -1181,12 +1181,9 @@ if(menuBtn&&mobileNav){
       promoModal.removeAttribute("hidden");
     };
 
-    window.__dismissPromoModal = function (submitted = false) {
+    window.__dismissPromoModal = function () {
       try { localStorage.setItem(PROMO_KEY, Date.now().toString()); } catch (e) { }
       promoModal.setAttribute("hidden", "true");
-      if (submitted) {
-        alert("Thank you! Your donation preparation checklist will be sent shortly.");
-      }
     };
 
     if (closePromoBtn) {
@@ -1241,12 +1238,11 @@ if(menuBtn&&mobileNav){
     <button type="button" id="closePromoModalBtn" class="cro-modal-close-btn" aria-label="Close promotional modal">&times;</button>
     <div class="cro-modal-badge">🌱 Free 2026 Checklist</div>
     <h3 id="promoModalTitle" class="cro-modal-title">Where to Donate Tools Without Rejection</h3>
-    <p class="cro-modal-desc">Get our printable 1-page donation checklist &amp; charity intake guidelines sent straight to your inbox.</p>
-    <form id="promoModalForm" class="cro-modal-form" onsubmit="event.preventDefault(); window.__dismissPromoModal(true);">
-      <input type="email" class="cro-modal-input" placeholder="Enter your email address..." required aria-label="Email address">
-      <button type="submit" class="cro-modal-submit-btn">Get Free Guide</button>
-    </form>
-    <span class="cro-modal-note">No spam ever. 100% free public guide. Unsubscribe anytime.</span>
+    <p class="cro-modal-desc">View our free 1-page donation checklist &amp; charity intake guidelines right here on this site — no email needed.</p>
+    <div class="cro-modal-form">
+      <a href="../tools.html#safety-checklist" class="cro-modal-submit-btn" style="display:block;text-align:center;text-decoration:none;box-sizing:border-box">View the Free Checklist</a>
+    </div>
+    <span class="cro-modal-note">100% free public guide. No email needed.</span>
   </div>
 </div>
 

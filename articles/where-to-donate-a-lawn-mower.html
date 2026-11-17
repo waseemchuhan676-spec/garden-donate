@@ -943,7 +943,7 @@ footer{background:#142d1f;color:#dcebdc;padding:45px 0}
 <div class="org-card" id="habitat-restore-rules">
 <span class="badge">BUILDING & HARDWARE REUSE</span>
 <h4>1. Habitat for Humanity ReStore</h4>
-<p>Habitat ReStores are non-profit home improvement outlets that sell donated building materials, appliances, and outdoor maintenance equipment to the public. Funds generated support local affordable home construction.</p>
+<p><a href="https://www.habitat.org/restores/donate-goods" target="_blank" rel="noopener noreferrer">Habitat ReStores</a> are non-profit home improvement outlets that sell donated building materials, appliances, and outdoor maintenance equipment to the public. Funds generated support local affordable home construction.</p>
 <p><em>Intake criteria:</em> ReStores commonly accept functional push mowers, self-propelled mowers, and riding mowers. Working condition and structural integrity are mandatory. Pickup may be available at some local locations for large riding mowers or multi-item estates, but push mowers are generally drop-off only. <a href="../where-to-donate.html#directory">Verify with your local ReStore</a> before traveling.</p>
 </div>
 
@@ -957,7 +957,7 @@ footer{background:#142d1f;color:#dcebdc;padding:45px 0}
 <span style="background:#236b3a;color:#fff;font-size:11px;font-weight:800;padding:3px 9px;border-radius:20px;text-transform:uppercase;letter-spacing:.05em">Direct Answer</span>
 <h3 style="margin:0;font-size:19px;color:#163022">Does Goodwill Take Lawnmowers?</h3>
 </div>
-<p style="margin:0 0 10px;font-size:15px;color:#24332a"><strong>Yes, Goodwill takes lawnmowers at many locations, but acceptance depends strictly on power type and local regional council policies:</strong></p>
+<p style="margin:0 0 10px;font-size:15px;color:#24332a"><strong>Yes, <a href="https://www.goodwill.org/donate/" target="_blank" rel="noopener noreferrer">Goodwill</a> takes lawnmowers at many locations, but acceptance depends strictly on power type and local regional council policies:</strong></p>
 <ul style="margin:0 0 14px;padding-left:20px;font-size:15px;line-height:1.7">
 <li><strong>Push-Reel &amp; Cordless Electric Mowers:</strong> <span style="color:#236b3a;font-weight:700">Widely accepted</span> across Goodwill retail stores and attended drive-up bays. Ensure electric models include the dedicated rechargeable battery pack, charging station, and safety key.</li>
 <li><strong>Gasoline Walk-Behind Mowers:</strong> <span style="color:#9a5b14;font-weight:700">Accepted at select regional locations only</span>. Because Goodwill stores process items inside retail warehouses, municipal fire codes strictly prohibit storing volatile hydrocarbons. <strong>All gasoline and engine oil must be 100% drained</strong> prior to drop-off. Mowers smelling of gasoline will be turned away immediately.</li>
@@ -1202,7 +1202,7 @@ footer{background:#142d1f;color:#dcebdc;padding:45px 0}
 <tr>
 <td style="padding:10px 12px;border-bottom:1px solid #dbe6dd"><strong>Riding mower — The Salvation Army</strong></td>
 <td style="padding:10px 12px;border-bottom:1px solid #dbe6dd">Pickup may be available</td>
-<td style="padding:10px 12px;border-bottom:1px solid #dbe6dd">Schedule through satruck.org; pickup is offered in select ZIP codes for large mowers — see our <a href="does-salvation-army-take-lawn-mowers.html">Salvation Army lawn mower guide</a></td>
+<td style="padding:10px 12px;border-bottom:1px solid #dbe6dd">Schedule through <a href="https://satruck.org/" target="_blank" rel="noopener noreferrer">satruck.org</a>; pickup is offered in select ZIP codes for large mowers — see our <a href="does-salvation-army-take-lawn-mowers.html">Salvation Army lawn mower guide</a></td>
 </tr>
 <tr>
 <td style="padding:10px 12px;border-bottom:1px solid #dbe6dd"><strong>Non-running mower — vocational schools</strong></td>
@@ -1380,12 +1380,9 @@ if(menuBtn&&mobileNav){
       promoModal.removeAttribute("hidden");
     };
 
-    window.__dismissPromoModal = function (submitted = false) {
+    window.__dismissPromoModal = function () {
       try { localStorage.setItem(PROMO_KEY, Date.now().toString()); } catch (e) { }
       promoModal.setAttribute("hidden", "true");
-      if (submitted) {
-        alert("Thank you! Your donation preparation checklist will be sent shortly.");
-      }
     };
 
     if (closePromoBtn) {
@@ -1440,12 +1437,11 @@ if(menuBtn&&mobileNav){
     <button type="button" id="closePromoModalBtn" class="cro-modal-close-btn" aria-label="Close promotional modal">&times;</button>
     <div class="cro-modal-badge">🌱 Free 2026 Checklist</div>
     <h3 id="promoModalTitle" class="cro-modal-title">Where to Donate Tools Without Rejection</h3>
-    <p class="cro-modal-desc">Get our printable 1-page donation checklist &amp; charity intake guidelines sent straight to your inbox.</p>
-    <form id="promoModalForm" class="cro-modal-form" onsubmit="event.preventDefault(); window.__dismissPromoModal(true);">
-      <input type="email" class="cro-modal-input" placeholder="Enter your email address..." required aria-label="Email address">
-      <button type="submit" class="cro-modal-submit-btn">Get Free Guide</button>
-    </form>
-    <span class="cro-modal-note">No spam ever. 100% free public guide. Unsubscribe anytime.</span>
+    <p class="cro-modal-desc">View our free 1-page donation checklist &amp; charity intake guidelines right here on this site — no email needed.</p>
+    <div class="cro-modal-form">
+      <a href="../tools.html#safety-checklist" class="cro-modal-submit-btn" style="display:block;text-align:center;text-decoration:none;box-sizing:border-box">View the Free Checklist</a>
+    </div>
+    <span class="cro-modal-note">100% free public guide. No email needed.</span>
   </div>
 </div>
 
